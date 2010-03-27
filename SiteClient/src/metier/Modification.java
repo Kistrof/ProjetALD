@@ -1,6 +1,17 @@
 package metier;
 
-public interface Modification
+public abstract class Modification
 {
-	public void appliquer();
+	protected Pro auteur;
+	public abstract void appliquer();
+	
+	protected Modification(Pro a)
+	{
+		this.auteur = a;
+	}
+	
+	public Pro getAuteur()
+	{
+		return this.auteur;
+	}
 }
