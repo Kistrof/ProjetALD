@@ -87,6 +87,7 @@ CREATE TABLE rel_film_pers (
   edit_producteur  int(10), 
   edit_acteur      int(10), 
   filmid           int(10) NOT NULL, 
+  prologin         varchar(255) NOT NULL, 
   PRIMARY KEY (id)) comment='Les champs nommés "edit_..." font référence à des ID de la table personne
 Une valeur positive signifie l''ajout de l''élément qui possède cet ID
 Une valeur négative signifie la suppression de l''élément dont l''ID est la valeur absolue du champ';
@@ -116,6 +117,7 @@ ALTER TABLE personne_temp ADD INDEX FKpersonne_t825642 (prologin);
 ALTER TABLE film_temp ADD INDEX FKfilm_temp541723 (prologin);
 ALTER TABLE film_temp ADD INDEX FKfilm_temp364925 (filmid);
 ALTER TABLE rel_film_pers ADD INDEX FKrel_film_p360755 (filmid);
+ALTER TABLE rel_film_pers ADD INDEX FKrel_film_p425697 (prologin);
 ALTER TABLE recompense_temp ADD INDEX FKrecompense806234 (personneid);
 ALTER TABLE recompense_temp ADD INDEX FKrecompense201858 (filmid);
 ALTER TABLE recompense_temp ADD INDEX FKrecompense329926 (recompenseid);
