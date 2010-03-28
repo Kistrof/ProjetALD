@@ -165,55 +165,100 @@ public class Personne {
 	}
 
 	/**
-	 * Permet d'ajouter un film dans la filmographie d'une personne 
+	 * Permet d'ajouter un film dans la filmographie d'une personne et propage la modif sur film
 	 * @param film: le film à ajouter
 	 */
 	public void ajouterFilmJoue(Film film) {
+		this.addFilmJoue(film);
+		film.addActeur(this);
+	}
+	
+	/**
+	 * Permet d'ajouter un film dans la filmographie d'une personne
+	 * @param film le film à ajouter
+	 */
+	public void addFilmJoue(Film film) {
 		filmographie.add(film);
 	}
 	
 	/**
-	 * Permet d'ajouter un film dans les productions d'une personne 
+	 * Permet d'ajouter un film dans les productions d'une personne et propage la modif sur film
 	 * @param film: le film à ajouter
 	 */
 	public void ajouterFilmProduit(Film film) {
+		this.addFilmProduit(film);
+		film.addProducteur(this);
+	}
+	
+	/**
+	 * Permet d'ajouter un film dans les productions d'une personne
+	 * @param film: le film à ajouter
+	 */
+	public void addFilmProduit(Film film) {
 		productions.add(film);
 	}
 	
 	/**
-	 * Permet d'ajouter un film dans les realisations d'une personne 
+	 * Permet d'ajouter un film dans les realisations d'une personne et propage la modif sur film
 	 * @param film: le film à ajouter
 	 */
 	public void ajouterFilmRealise(Film film) {
+		this.addFilmRealise(film);
+		film.addRealisateur(this);
+	}
+	
+	/**
+	 * Permet d'ajouter un film dans les realisations d'une personne
+	 * @param film: le film à ajouter
+	 */
+	public void addFilmRealise(Film film) {
 		realisations.add(film);
 	}
 	
 	/**
-	 * Permet d'ajouter une recompense dans les recompenses d'une personne 
+	 * Permet d'ajouter une recompense dans les recompenses d'une personne
 	 * @param recompense : la recompense à ajouter
 	 */
-	public void ajouterRecompense(Recompense reconpense) {
-		recompenses.add(reconpense);
+	public void addRecompense(Recompense recompense) {
+		recompenses.add(recompense);
 	}
 	
 	/**
-	 * Permet de supprimer un film dans la filmographie d'une personne 
+	 * Permet de supprimer un film dans la filmographie d'une personne et propage la modif sur film
 	 * @param film : le film à supprimer
 	 */
 	public void supprimerFilmJoue(Film film) {
+		this.removeFilmJoue(film);
+		film.removeActeur(this);
+	}
+	
+	/**
+	 * Permet de supprimer un film dans la filmographie d'une personne
+	 * @param film : le film à supprimer
+	 */
+	public void removeFilmJoue(Film film) {
 		filmographie.remove(film);
 	}
 	
 	/**
-	 * Permet de supprimer un film dans les production d'une personne 
+	 * Permet de supprimer un film dans les production d'une personne et propage la modif sur film
 	 * @param film : le film à supprimer
 	 */
 	public void supprimerFilmProduit(Film film) {
+		this.removeFilmProduit(film);
+		film.removeProducteur(this);
+	}
+	
+	/**
+	 * Permet de supprimer un film dans les production d'une personne
+	 * @param film : le film à supprimer
+	 */
+	public void removeFilmProduit(Film film) {
 		productions.remove(film);
 	}
 	
 	/**
-	 * Permet de supprimer un film dans les realisations d'une personne 
+	 * Permet de supprimer un film dans les realisations d'une personne et propage la modif sur film
 	 * @param film : le film à supprimer
 	 */
 	public void supprimerFilmRealise(Film film) {
@@ -221,7 +266,16 @@ public class Personne {
 	}
 	
 	/**
-	 * Permet de supprimer une recompense dans les recompenses d'une personne 
+	 * Permet de supprimer un film dans les realisations d'une personne
+	 * @param film : le film à supprimer
+	 */
+	public void removeFilmRealise(Film film) {
+		this.realisations.add(film);
+		film.removeRealisateur(this);
+	}
+	
+	/**
+	 * Permet de supprimer une recompense dans les recompenses d'une personne et propage la modif sur film
 	 * @param recompense : la recompense à supprimer
 	 */
 	public void supprimerRecompense(Recompense recompense) {
