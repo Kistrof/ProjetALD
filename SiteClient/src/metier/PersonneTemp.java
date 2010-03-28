@@ -93,16 +93,16 @@ public class PersonneTemp implements Modification {
 	 * @see metier.Modification#appliquer()
 	 */
 	public void appliquer() {
-		if(!this.nom.equals(original.getNom()) && this.nom != "")
+		if(this.nom != null)
 			original.setNom(this.nom);
 		
-		if(!this.prenom.equals(original.getPrenom()) && this.prenom != "")
+		if(this.prenom != null)
 			original.setPrenom(this.prenom);
 		
-		if(!this.naissance.equals(original.getNaissance()) && this.naissance != null)
+		if(this.naissance != null)
 			original.setNaissance(this.naissance);
 		
-		if(!this.photo.equals(original.getPhoto()) && this.photo != "")	
+		if(this.photo != null)	
 			original.setPhoto(this.photo);
 		
 		if(this.suppr_recompense != null)
