@@ -11,8 +11,15 @@ public class SupprRelFilmPers extends ModifRelationFilmPers
 	@Override
 	public void appliquer()
 	{
-		// TODO Auto-generated method stub
-
+		if (producteur != null)
+			original.supprimerProducteur(producteur);
+		if (realisateur != null)
+			original.supprimerRealisateur(realisateur);
+		if (acteur != null)
+			original.supprimerActeur(acteur);
+		
+		// TODO Supprimer la ligne dans la bdd
+		
 	}
 
 }

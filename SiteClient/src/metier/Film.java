@@ -1,6 +1,6 @@
 package metier;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 
 public class Film
@@ -38,7 +38,7 @@ public class Film
 	public Film(int id, String titre, int anneeSortie, double cout, String affiche, String description, Date dateMaj, double noteMoyenne,
 			ArrayList<Recompense> recompenses, ArrayList<Personne> producteurs, ArrayList<Personne> realisateurs, ArrayList<Personne> acteurs)
 	{
-		super();
+		this();
 		this.id = id;
 		if (titre != null) this.titre = titre;
 		annee_sortie = anneeSortie;
@@ -55,20 +55,50 @@ public class Film
 	
 	public void ajouterRecompense(Recompense r)
 	{
-		this.recompenses.add(r);
-		
-		
+		this.addRecompense(r);
+		r.setFilm(this);
 	}
 	
-	public void supprimerRecompense(Recompense r)
+	public void addRecompense(Recompense r)
 	{
-		
+		this.recompenses.add(r);
 	}
 	
 	public void ajouterProducteur(Personne p)
 	{
+		this.addProducteur(p);
+		p.addProduction(this);
+	}
+	
+	public void addProducteur(Personne p)
+	{
 		this.producteurs.add(p);
-		
+	}
+	
+	public void ajouterRealisateur(Personne p)
+	{
+		this.addRealisateur(p);
+		p.addRealisation(this);
+	}
+	
+	public void addRealisateur(Personne p)
+	{
+		this.realisateurs.add(p);
+	}
+	
+	public void ajouterActeur(Personne p)
+	{
+		this.addActeur(p);
+		p.addFilmJoue(this);
+	}
+	
+	public void addActeur(Personne p)
+	{
+		this.acteurs.add(p);
+	}
+
+	public void deleteRecompense(Recompense r)
+	{
 		
 	}
 	
@@ -76,26 +106,12 @@ public class Film
 	{
 		
 	}
-	
-	public void ajouterRealisateur(Personne p)
-	{
-		this.realisateurs.add(p);
 		
-		
-	}
-	
 	public void supprimerRealisateur(Personne p)
 	{
 		
 	}
 	
-	public void ajouterActeur(Personne p)
-	{
-		this.acteurs.add(p);
-		
-		
-	}
-
 	public void supprimerActeur(Personne p)
 	{
 		

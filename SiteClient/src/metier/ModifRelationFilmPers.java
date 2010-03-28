@@ -2,11 +2,11 @@ package metier;
 
 public abstract class ModifRelationFilmPers extends Modification
 {
-	private int id
-	private Personne producteur;
-	private Personne realisateur;
-	private Personne acteur;
-	private Film original;
+	private int id;
+	protected Personne producteur;
+	protected Personne realisateur;
+	protected Personne acteur;
+	protected Film original;
 	
 	protected ModifRelationFilmPers(int id, Film original, Pro auteur, Personne producteur, Personne realisateur, Personne acteur)
 	{

@@ -11,8 +11,15 @@ public class AjouteRelFilmPers extends ModifRelationFilmPers
 	@Override
 	public void appliquer()
 	{
-		// TODO Auto-generated method stub
-
+		if (producteur != null)
+			original.ajouterProducteur(producteur);
+		if (realisateur != null)
+			original.ajouterRealisateur(realisateur);
+		if (acteur != null)
+			original.ajouterActeur(acteur);
+		
+		// TODO Supprimer la ligne dans la bdd
+		
 	}
 
 }

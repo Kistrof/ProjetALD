@@ -1,5 +1,7 @@
 package metier;
 
+import java.util.Date;
+
 public class FilmTemp extends Modification
 {
 	private int id;
@@ -22,6 +24,7 @@ public class FilmTemp extends Modification
 			if (affiche != null) original.setAffiche(affiche);
 			if (description != null) original.setDescription(description);
 			if (suppr_recompense != null) original.supprimerRecompense(suppr_recompense);
+			original.setDate_maj(new Date());
 		}
 	}
 
