@@ -14,4 +14,9 @@ public abstract class Modification
 	{
 		return this.auteur;
 	}
+	
+	public String toString()
+	{
+		return "Modification[auteur:"+this.auteur;
+	}
 }
