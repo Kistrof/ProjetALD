@@ -1,6 +1,6 @@
 package metier;
 
-import java.sql.Date;
+import java.util.Date;
 
 
 
@@ -77,8 +77,8 @@ public class Recompense {
 		return date_maj;
 	}
 	
-	public void setDate_maj(Date dateMaj) {
-		date_maj = dateMaj;
+	public void setDate_maj(Date date) {
+		date_maj = date;
 	}
 	
 
