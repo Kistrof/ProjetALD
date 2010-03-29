@@ -17,9 +17,6 @@ public class SupprRelFilmPers extends ModifRelationFilmPers
 			original.supprimerRealisateur(realisateur);
 		if (acteur != null)
 			original.supprimerActeur(acteur);
-		
-		// TODO Supprimer la ligne dans la bdd
-		
 	}
 
 }

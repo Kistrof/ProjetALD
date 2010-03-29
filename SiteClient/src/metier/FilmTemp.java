@@ -11,24 +11,25 @@ public class FilmTemp extends Modification
 	private double cout;
 	private String affiche;
 	private String description;
+	private Recompense ajout_recompense;
 	private Recompense suppr_recompense;
 	
 	@Override
 	public void appliquer()
 	{
-		if (original != null)
-		{
-			if (titre != null) original.setTitre(titre);
-			if (annee_sortie > 0) original.setAnnee_sortie(annee_sortie);
-			if (cout > 0) original.setCout(cout);
-			if (affiche != null) original.setAffiche(affiche);
-			if (description != null) original.setDescription(description);
-			if (suppr_recompense != null) original.supprimerRecompense(suppr_recompense);
-			original.setDate_maj(new Date());
-		}
+		if (original == null) original = new Film();
+		
+		if (titre != null) original.setTitre(titre);
+		if (annee_sortie > 0) original.setAnnee_sortie(annee_sortie);
+		if (cout > 0) original.setCout(cout);
+		if (affiche != null) original.setAffiche(affiche);
+		if (description != null) original.setDescription(description);
+		if (ajout_recompense != null) original.ajouterRecompense(suppr_recompense);
+		if (suppr_recompense != null) original.supprimerRecompense(suppr_recompense);
+		original.setDate_maj(new Date());
 	}
 
-	public FilmTemp(int id, Film original, Pro auteur, String titre, int anneeSortie, double cout, String affiche, String description, Recompense suppr_recompense)
+	public FilmTemp(int id, Film original, Pro auteur, String titre, int anneeSortie, double cout, String affiche, String description, Recompense ajout_recompense, Recompense suppr_recompense)
 	{
 		super(auteur);
 		this.id = id;
@@ -38,6 +39,7 @@ public class FilmTemp extends Modification
 		this.cout = cout;
 		this.affiche = affiche;
 		this.description = description;
+		this.ajout_recompense = ajout_recompense;
 		this.suppr_recompense = suppr_recompense;
 	}
 	

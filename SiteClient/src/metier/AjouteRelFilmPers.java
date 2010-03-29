@@ -17,9 +17,6 @@ public class AjouteRelFilmPers extends ModifRelationFilmPers
 			original.ajouterRealisateur(realisateur);
 		if (acteur != null)
 			original.ajouterActeur(acteur);
-		
-		// TODO Supprimer la ligne dans la bdd
-		
 	}
 
 }
