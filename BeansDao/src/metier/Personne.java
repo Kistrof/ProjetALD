@@ -6,8 +6,6 @@ package metier;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.LinkedList;
 
 /**
  * @author zuzudesbois
@@ -37,21 +35,17 @@ public class Personne {
 	private int popularite;
 	
 	/** liste des films q'une personne a joué */ 
-	private LinkedList<Film> filmographie;
+	private ArrayList<Film> filmographie;
 	
 	/** liste des films qu'une personne a réalisé */
-	private LinkedList<Film> realisations;
+	private ArrayList<Film> realisations;
 	
 	/** liste des films qu'une personne a produit */
-	private LinkedList<Film> productions;
+	private ArrayList<Film> productions;
 	
 	/** liste des recompense reçu */
-	private LinkedList<Recompense> recompenses;
-	
-	
-	/**
-	 * Constrcuteur vide  
-	 */
+	private ArrayList<Recompense> recompenses;
+
 	public Personne() {
 	}
 
@@ -132,35 +126,35 @@ public class Personne {
 		this.popularite = popularite;
 	}
 
-	public LinkedList<Film> getFilmographie() {
+	public ArrayList<Film> getFilmographie() {
 		return filmographie;
 	}
 
-	public void setFilmographie(LinkedList<Film> filmographie) {
+	public void setFilmographie(ArrayList<Film> filmographie) {
 		this.filmographie = filmographie;
 	}
 
-	public LinkedList<Film> getRealisations() {
+	public ArrayList<Film> getRealisations() {
 		return realisations;
 	}
 
-	public void setRealisations(LinkedList<Film> realisations) {
+	public void setRealisations(ArrayList<Film> realisations) {
 		this.realisations = realisations;
 	}
 
-	public LinkedList<Film> getProductions() {
+	public ArrayList<Film> getProductions() {
 		return productions;
 	}
 
-	public void setProductions(LinkedList<Film> productions) {
+	public void setProductions(ArrayList<Film> productions) {
 		this.productions = productions;
 	}
 	
-	public LinkedList<Recompense> getRecompenses() {
+	public ArrayList<Recompense> getRecompenses() {
 		return recompenses;
 	}
 
-	public void setRecompenses(LinkedList<Recompense> recompenses) {
+	public void setRecompenses(ArrayList<Recompense> recompenses) {
 		this.recompenses = recompenses;
 	}
 

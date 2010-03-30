@@ -19,26 +19,12 @@ public class Film
 	private ArrayList<Personne> realisateurs;
 	private ArrayList<Personne> acteurs;
 	
-	public Film()
-	{
-		id = -1;
-		titre = "";
-		annee_sortie = -1;
-		cout = -1;
-		affiche = "";
-		description = "";
-		date_maj = new Date(0);
-		note_moyenne = -1;
-		recompenses = new ArrayList<Recompense>();
-		producteurs = new ArrayList<Personne>();
-		realisateurs = new ArrayList<Personne>();
-		acteurs = new ArrayList<Personne>();
+	public Film() {
 	}
-
+	
 	public Film(int id, String titre, int anneeSortie, double cout, String affiche, String description, Date dateMaj, double noteMoyenne,
 			ArrayList<Recompense> recompenses, ArrayList<Personne> producteurs, ArrayList<Personne> realisateurs, ArrayList<Personne> acteurs)
 	{
-		this();
 		this.id = id;
 		if (titre != null) this.titre = titre;
 		annee_sortie = anneeSortie;
@@ -56,7 +42,6 @@ public class Film
 	public void ajouterRecompense(Recompense r)
 	{
 		this.addRecompense(r);
-		r.setFilm(this);
 	}
 	
 	public void addRecompense(Recompense r)
@@ -67,7 +52,7 @@ public class Film
 	public void ajouterProducteur(Personne p)
 	{
 		this.addProducteur(p);
-		p.addProduction(this);
+		p.addFilmProduit(this);
 	}
 	
 	public void addProducteur(Personne p)
@@ -78,7 +63,7 @@ public class Film
 	public void ajouterRealisateur(Personne p)
 	{
 		this.addRealisateur(p);
-		p.addRealisation(this);
+		p.addFilmRealise(this);
 	}
 	
 	public void addRealisateur(Personne p)
@@ -97,24 +82,42 @@ public class Film
 		this.acteurs.add(p);
 	}
 
-	public void deleteRecompense(Recompense r)
+	public void supprimerRecompense(Recompense r)
 	{
-		
+		this.recompenses.remove(r);
 	}
 	
 	public void supprimerProducteur(Personne p)
 	{
-		
+		this.removeProducteur(p);
+		p.removeFilmProduit(this);
+	}
+	
+	public void removeProducteur(Personne p)
+	{
+		this.producteurs.remove(p);
 	}
 		
 	public void supprimerRealisateur(Personne p)
 	{
-		
+		this.removeRealisateur(p);
+		p.removeFilmRealise(this);
+	}
+	
+	public void removeRealisateur(Personne p)
+	{
+		this.realisateurs.remove(p);
 	}
 	
 	public void supprimerActeur(Personne p)
 	{
-		
+		this.removeActeur(p);
+		p.removeFilmJoue(this);
+	}
+	
+	public void removeActeur(Personne p)
+	{
+		this.acteurs.remove(p);
 	}
 	
 	public int getId() {
@@ -212,9 +215,5 @@ public class Film
 	public void setActeurs(ArrayList<Personne> acteurs) {
 		this.acteurs = acteurs;
 	}
-	
-	
-	
-	
-	
+
 }

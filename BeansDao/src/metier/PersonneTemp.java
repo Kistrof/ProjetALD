@@ -10,7 +10,7 @@ import java.util.Date;
  * @class PersonneTemp 
  * Class permettant la modification d'une personne
  */
-public class PersonneTemp implements Modification {
+public class PersonneTemp extends Modification {
 
 	private int id = -1;
 	private String nom = "";
