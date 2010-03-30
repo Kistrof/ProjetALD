@@ -1,5 +1,5 @@
 package metier;
 
-public class Pro {
+public class Ceremonie {
 	// TODO
 }
