@@ -14,6 +14,9 @@ public class FilmTemp extends Modification
 	private Recompense ajout_recompense;
 	private Recompense suppr_recompense;
 	
+	/**
+	 * Applique les modifications
+	 */
 	@Override
 	public void appliquer()
 	{
@@ -29,6 +32,19 @@ public class FilmTemp extends Modification
 		original.setDate_maj(new Date());
 	}
 
+	/**
+	 * Crée une demande de modification d'un film
+	 * @param id int, ID de la demande de modification
+	 * @param original Film, Film sur lequel porte la modification
+	 * @param auteur Pro, Auteur de la demande
+	 * @param titre String, Titre du film
+	 * @param anneeSortie int, Année de sortie du film
+	 * @param cout double, Cout total du film
+	 * @param affiche String, Lien vers l'affiche du film
+	 * @param description String, Description rapide du film
+	 * @param ajout_recompense Recompense, Récompense à ajouter au film
+	 * @param suppr_recompense Recompense, Récompense à supprimer au film
+	 */
 	public FilmTemp(int id, Film original, Pro auteur, String titre, int anneeSortie, double cout, String affiche, String description, Recompense ajout_recompense, Recompense suppr_recompense)
 	{
 		super(auteur);

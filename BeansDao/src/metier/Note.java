@@ -6,6 +6,12 @@ public class Note
 	private Pro votant;
 	private Film film;
 	
+	/**
+	 * Construit une note donnée à un Film par un Pro
+	 * @param p Pro, Auteur de la note
+	 * @param f Film, Film noté
+	 * @param val int, valeur de la note
+	 */
 	public Note(Pro p, Film f, int val)
 	{
 		this.votant = p;

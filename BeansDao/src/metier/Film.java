@@ -19,9 +19,40 @@ public class Film
 	private ArrayList<Personne> realisateurs;
 	private ArrayList<Personne> acteurs;
 	
-	public Film() {
+	/**
+	 * Construit un film vide
+	 */
+	public Film()
+	{
+		id = -1;
+		titre = "";
+		annee_sortie = -1;
+		cout = -1;
+		affiche = "";
+		description = "";
+		date_maj = new Date();
+		note_moyenne = -1;
+		recompenses = new ArrayList<Recompense>();
+		producteurs = new ArrayList<Personne>();
+		realisateurs = new ArrayList<Personne>();
+		acteurs = new ArrayList<Personne>();
 	}
 	
+	/**
+	 * Construit un Film
+	 * @param id int, ID du film en base de données, vaut -1 si le film n'est pas enregistré
+	 * @param titre String, Titre du film
+	 * @param anneeSortie int, Année de sortie du film
+	 * @param cout double, Cout total du film
+	 * @param affiche String, Lien vers l'affiche du film
+	 * @param description String, Description rapide du film
+	 * @param dateMaj Date, Date de dernière mise à jour du film
+	 * @param noteMoyenne double, Note moyenne attribuée par les membres
+	 * @param recompenses ArrayList<Recompense>, Liste des récompenses
+	 * @param producteurs ArrayList<Personne>,  Liste des producteurs
+	 * @param realisateurs ArrayList<Personne>, Liste des réalisateurs
+	 * @param acteurs ArrayList<Personne>, Liste des acteurs
+	 */
 	public Film(int id, String titre, int anneeSortie, double cout, String affiche, String description, Date dateMaj, double noteMoyenne,
 			ArrayList<Recompense> recompenses, ArrayList<Personne> producteurs, ArrayList<Personne> realisateurs, ArrayList<Personne> acteurs)
 	{
@@ -39,6 +70,10 @@ public class Film
 		if (acteurs != null) this.acteurs = acteurs;
 	}
 	
+	/**
+	 * Ajoute une récompense au film
+	 * @param r Recompense
+	 */
 	public void ajouterRecompense(Recompense r)
 	{
 		this.addRecompense(r);
@@ -49,6 +84,10 @@ public class Film
 		this.recompenses.add(r);
 	}
 	
+	/**
+	 * Ajoute un producteur au film
+	 * @param p Personne
+	 */
 	public void ajouterProducteur(Personne p)
 	{
 		this.addProducteur(p);
@@ -60,6 +99,10 @@ public class Film
 		this.producteurs.add(p);
 	}
 	
+	/**
+	 * Ajoute un réalisateur du film
+	 * @param p Personne
+	 */
 	public void ajouterRealisateur(Personne p)
 	{
 		this.addRealisateur(p);
@@ -71,6 +114,10 @@ public class Film
 		this.realisateurs.add(p);
 	}
 	
+	/**
+	 * Ajoute un acteur au film
+	 * @param p Personne
+	 */
 	public void ajouterActeur(Personne p)
 	{
 		this.addActeur(p);
@@ -82,11 +129,19 @@ public class Film
 		this.acteurs.add(p);
 	}
 
+	/**
+	 * Supprime une récompense du film
+	 * @param r Recompense
+	 */
 	public void supprimerRecompense(Recompense r)
 	{
 		this.recompenses.remove(r);
 	}
 	
+	/**
+	 * Supprime un producteur du film
+	 * @param p Personne
+	 */
 	public void supprimerProducteur(Personne p)
 	{
 		this.removeProducteur(p);
@@ -97,7 +152,11 @@ public class Film
 	{
 		this.producteurs.remove(p);
 	}
-		
+	
+	/**
+	 * Supprime un réalisateur du film
+	 * @param p Personne
+	 */
 	public void supprimerRealisateur(Personne p)
 	{
 		this.removeRealisateur(p);
@@ -109,6 +168,10 @@ public class Film
 		this.realisateurs.remove(p);
 	}
 	
+	/**
+	 * Supprime un acteur du film
+	 * @param p Personne
+	 */
 	public void supprimerActeur(Personne p)
 	{
 		this.removeActeur(p);
