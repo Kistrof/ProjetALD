@@ -1,5 +1,7 @@
 package metier;
 
+import java.util.Date;
+
 public abstract class Modification
 {
 	/**
@@ -8,17 +10,24 @@ public abstract class Modification
 	protected Pro auteur;
 	
 	/**
+	 * Date de soumission de la demande
+	 */
+	protected Date soumission;
+	
+	/**
 	 * Applique la modification
 	 */
 	public abstract void appliquer();
 	
 	/**
 	 * Construit une demande de modification avec l'auteur donné
-	 * @param a Pro
+	 * @param a Pro, Auteur de la demande
+	 * @param d Date, Date de la demande
 	 */
-	protected Modification(Pro a)
+	protected Modification(Pro a, Date d)
 	{
 		this.auteur = a;
+		this.soumission = d;
 	}
 	
 	/**
@@ -28,6 +37,15 @@ public abstract class Modification
 	public Pro getAuteur()
 	{
 		return this.auteur;
+	}
+	
+	/**
+	 * Renvoie la date à laquelle la demande a été effectuée
+	 * @return Date
+	 */
+	public Date getDate()
+	{
+		return this.soumission;
 	}
 	
 	public String toString()
