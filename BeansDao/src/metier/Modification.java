@@ -5,6 +5,11 @@ import java.util.Date;
 public abstract class Modification
 {
 	/**
+	 * ID de la demande de modification
+	 */
+	protected int id;
+	
+	/**
 	 * Auteur de la demande de modification
 	 */
 	protected Pro auteur;
@@ -21,28 +26,32 @@ public abstract class Modification
 	
 	/**
 	 * Construit une demande de modification avec l'auteur donné
-	 * @param a Pro, Auteur de la demande
-	 * @param d Date, Date de la demande
+	 * @param id int, ID de la demande
+	 * @param auteur Pro, Auteur de la demande
+	 * @param dt Date, Date de la demande
 	 */
-	protected Modification(Pro a, Date d)
+	protected Modification(int id, Pro auteur, Date dt)
 	{
-		this.auteur = a;
-		this.soumission = d;
+		this.id = id;
+		this.auteur = auteur;
+		this.soumission = dt;
 	}
 	
-	/**
-	 * Renvoie l'auteur de la demande de modification
-	 * @return Pro
-	 */
+	public int getId()
+	{
+		return this.id;
+	}
+	
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+	
 	public Pro getAuteur()
 	{
 		return this.auteur;
 	}
 	
-	/**
-	 * Renvoie la date à laquelle la demande a été effectuée
-	 * @return Date
-	 */
 	public Date getDate()
 	{
 		return this.soumission;
@@ -50,6 +59,6 @@ public abstract class Modification
 	
 	public String toString()
 	{
-		return "Modification[auteur:"+this.auteur;
+		return "Modification[auteur="+this.auteur+";soumission="+this.soumission;
 	}
 }

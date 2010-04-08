@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class FilmTemp extends Modification
 {
-	private int id;
 	private Film original;
 	private String titre;
 	private int annee_sortie;
@@ -31,12 +30,29 @@ public class FilmTemp extends Modification
 		if (suppr_recompense != null) original.supprimerRecompense(suppr_recompense);
 		original.setDate_maj(new Date());
 	}
-
+	
+	/**
+	 * Constructeur par défaut
+	 */
+	public FilmTemp()
+	{
+		super(-1, null, null);
+		this.original = null;
+		this.titre = "";
+		annee_sortie = -1;
+		this.cout = -1;
+		this.affiche = "";
+		this.description = "";
+		ajout_recompense = null;
+		suppr_recompense = null;
+	}
+	
 	/**
 	 * Crée une demande de modification d'un film
 	 * @param id int, ID de la demande de modification
 	 * @param original Film, Film sur lequel porte la modification
 	 * @param auteur Pro, Auteur de la demande
+	 * @param dt Date de soumission de la demande
 	 * @param titre String, Titre du film
 	 * @param anneeSortie int, Année de sortie du film
 	 * @param cout double, Cout total du film
@@ -45,26 +61,32 @@ public class FilmTemp extends Modification
 	 * @param ajout_recompense Recompense, Récompense à ajouter au film
 	 * @param suppr_recompense Recompense, Récompense à supprimer au film
 	 */
-	public FilmTemp(int id, Film original, Pro auteur, String titre, int anneeSortie, double cout, String affiche, String description, Recompense ajout_recompense, Recompense suppr_recompense)
+	public FilmTemp(int id, Film original, Pro auteur, Date dt, String titre, int anneeSortie, double cout, String affiche, String description, Recompense ajoutRecompense, Recompense supprRecompense)
 	{
-		super(auteur);
-		this.id = id;
+		super(id, auteur, dt);
 		this.original = original;
 		this.titre = titre;
 		annee_sortie = anneeSortie;
 		this.cout = cout;
 		this.affiche = affiche;
 		this.description = description;
-		this.ajout_recompense = ajout_recompense;
-		this.suppr_recompense = suppr_recompense;
+		ajout_recompense = ajoutRecompense;
+		suppr_recompense = supprRecompense;
 	}
 	
-	public int getId() {
-		return id;
+	public boolean equals(Object o)
+	{
+		if (o instanceof FilmTemp)
+		{
+			FilmTemp f = (FilmTemp)o;
+			return (this.getId() == f.getId());
+		}
+		else return false;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	
+	public String toString()
+	{
+		return super.toString()+";type=Film;original="+this.original+"]";
 	}
 
 	public String getTitre() {

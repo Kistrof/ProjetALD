@@ -70,6 +70,21 @@ public class Film
 		if (acteurs != null) this.acteurs = acteurs;
 	}
 	
+	public boolean equals(Object o)
+	{
+		if (o instanceof Film)
+		{
+			Film f = (Film)o;
+			return (f.getId() == this.getId());
+		}
+		else return false;
+	}
+	
+	public String toString()
+	{
+		return "Film[id="+this.id+";titre"+this.titre+"]";
+	}
+	
 	/**
 	 * Ajoute une récompense au film
 	 * @param r Recompense
