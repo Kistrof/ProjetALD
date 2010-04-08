@@ -26,6 +26,11 @@ CREATE TABLE acteurs (
   filmid     int(10) NOT NULL, 
   PRIMARY KEY (personneid, 
   filmid));
+CREATE TABLE personne_film (
+  personneid int(10) NOT NULL, 
+  filmid     int(10) NOT NULL, 
+  PRIMARY KEY (personneid, 
+  filmid));
 CREATE TABLE realisateurs (
   personneid int(10) NOT NULL, 
   filmid     int(10) NOT NULL, 
@@ -67,6 +72,7 @@ CREATE TABLE personne_temp (
   naissance        date, 
   photo            varchar(255), 
   suppr_recompense int(10), 
+  soumission       timestamp, 
   personneid       int(10), 
   prologin         varchar(255) NOT NULL, 
   PRIMARY KEY (id));
@@ -78,6 +84,7 @@ CREATE TABLE film_temp (
   affiche          varchar(255), 
   description      blob, 
   suppr_recompense int(10), 
+  soumission       timestamp, 
   filmid           int(10), 
   prologin         varchar(255) NOT NULL, 
   PRIMARY KEY (id));
@@ -86,6 +93,7 @@ CREATE TABLE rel_film_pers (
   edit_realisateur int(10), 
   edit_producteur  int(10), 
   edit_acteur      int(10), 
+  soumission       timestamp NOT NULL, 
   filmid           int(10) NOT NULL, 
   prologin         varchar(255) NOT NULL, 
   PRIMARY KEY (id)) comment='Les champs nommés "edit_..." font référence à des ID de la table personne
@@ -94,6 +102,7 @@ Une valeur négative signifie la suppression de l''élément dont l''ID est la v
 CREATE TABLE recompense_temp (
   id           int(10) NOT NULL AUTO_INCREMENT, 
   annee        int(10), 
+  soumission   timestamp, 
   prixid       int(10) NOT NULL, 
   personneid   int(10) NOT NULL, 
   filmid       int(10) NOT NULL, 
