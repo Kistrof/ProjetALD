@@ -3,8 +3,8 @@ Beans métier
 - Constructeur avec tous les attributs (clic droit > Source > Generate Constructor using Fields)
 - Surcharger la méthode equals
 - Surcharger la méthode toString
-- Modification possède 2 attributs obligatoires et pas de constructeur par défaut
-  -> Appeler 'super(null, null);' dans les constructeurs par défaut
+- Modification possède 3 attributs obligatoires et pas de constructeur par défaut
+  -> Appeler 'super(-1, null, null);' dans les constructeurs par défaut
 
 DAO
 - extends DAOHibernate implements DAOxxx
@@ -14,5 +14,5 @@ DAO
 Mapping Hibernate
 - Un champ 'soumission' de type timestamp (date+heure) a été ajouté dans les tables SQL qui gèrent les modifications
   -> personne_temp, film_temp, recompense_temp, rel_film_pers
-- Voir comment gérer soi-même les id des objets référencés dans la table rel_film_pers (positif = ajout, négatir = suppression)
+- Voir comment gérer soi-même les id des objets référencés dans la table rel_film_pers (positif = ajout, négatif = suppression)
   -> Au pire, duplication des champs (un pour l'ajout et un autre pour la suppression) et répercuter sur le schéma UML
