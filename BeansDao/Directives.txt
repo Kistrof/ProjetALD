@@ -1,3 +1,8 @@
+Répartition des classes (4 chacun)
+- Damien : Personne, PersonneTemp, Prix, Ceremonie
+- Benoit : Recompense, RecompenseTemp, Pro, Note
+- Christophe : Film, FilmTemp, AjouteRelFilmPers, SupprRelFilmPers
+
 Beans métier
 - Constructeur par défaut (initialisations par défaut, nombres à -1)
 - Constructeur avec tous les attributs (clic droit > Source > Generate Constructor using Fields)
