@@ -14,7 +14,7 @@ public class DAOHibernate
      * @return Session
      * @throws Exception
      */
-    public Session connect() throws Exception
+    public Session connect()
     {
     	if (this.sessionFactory == null)
     		this.sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -38,7 +38,7 @@ public class DAOHibernate
      * @param session Session
      * @throws Exception
      */
-    public void close(Session session) throws Exception
+    public void close(Session session)
     {
     	session.getTransaction().commit();
     	session.close();
