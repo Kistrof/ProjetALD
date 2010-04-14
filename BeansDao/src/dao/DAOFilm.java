@@ -11,5 +11,4 @@ public interface DAOFilm
 	public void save(Film obj);
 	public void delete(Film obj);
 	public void update(Film obj);
-	public void saveOrUpdate(Film obj);
 }
