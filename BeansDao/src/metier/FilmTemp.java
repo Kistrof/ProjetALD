@@ -10,7 +10,6 @@ public class FilmTemp extends Modification
 	private double cout;
 	private String affiche;
 	private String description;
-	private Recompense ajout_recompense;
 	private Recompense suppr_recompense;
 	
 	/**
@@ -26,7 +25,6 @@ public class FilmTemp extends Modification
 		if (cout > 0) original.setCout(cout);
 		if (affiche != null) original.setAffiche(affiche);
 		if (description != null) original.setDescription(description);
-		if (ajout_recompense != null) original.ajouterRecompense(suppr_recompense);
 		if (suppr_recompense != null) original.supprimerRecompense(suppr_recompense);
 		original.setDate_maj(new Date());
 	}
@@ -43,7 +41,6 @@ public class FilmTemp extends Modification
 		this.cout = -1;
 		this.affiche = "";
 		this.description = "";
-		ajout_recompense = null;
 		suppr_recompense = null;
 	}
 	
@@ -61,7 +58,7 @@ public class FilmTemp extends Modification
 	 * @param ajout_recompense Recompense, Récompense à ajouter au film
 	 * @param suppr_recompense Recompense, Récompense à supprimer au film
 	 */
-	public FilmTemp(int id, Film original, Pro auteur, Date dt, String titre, int anneeSortie, double cout, String affiche, String description, Recompense ajoutRecompense, Recompense supprRecompense)
+	public FilmTemp(int id, Film original, Pro auteur, Date dt, String titre, int anneeSortie, double cout, String affiche, String description, Recompense supprRecompense)
 	{
 		super(id, auteur, dt);
 		this.original = original;
@@ -70,7 +67,6 @@ public class FilmTemp extends Modification
 		this.cout = cout;
 		this.affiche = affiche;
 		this.description = description;
-		ajout_recompense = ajoutRecompense;
 		suppr_recompense = supprRecompense;
 	}
 	
