@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.ModifRelationFilmPers" table="rel_film_pers" lazy="false">
+		<id name="id" type="integer" column="id"><generator class="native" /></id>
+		<many-to-one name="original"					column="filmid" />
+		<many-to-one name="auteur"						column="prologin" />
+		<property	name="soumission"	type="date"		column="soumission" />
+		<many-to-one name="ajout_producteur"			column="ajout_producteur" />
+		<many-to-one name="suppr_producteur"			column="suppr_producteur" />
+		<many-to-one name="ajout_realisateur"			column="ajout_realisateur" />
+		<many-to-one name="suppr_realisateur"			column="suppr_realisateur" />
+		<many-to-one name="ajout_acteur"				column="ajout_acteur" />
+		<many-to-one name="suppr_acteur"				column="suppr_acteur" />
+	</class>
+</hibernate-mapping>

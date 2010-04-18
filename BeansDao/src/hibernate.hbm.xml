@@ -9,6 +9,8 @@
 	
 	<!--fichiers de mapping -->
 	<mapping resource="dao/hibernate/Film.xml" />
+	<mapping resource="dao/hibernate/FilmTemp.xml" />
+	<mapping resource="dao/hibernate/ModifRelationFilmPers.xml" />
 	
 	
 	
