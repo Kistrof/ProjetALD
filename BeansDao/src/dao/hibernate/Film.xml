@@ -2,9 +2,7 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="metier.Film" table="film" lazy="false">
-		<id name="id" type="integer" column="id">
-			<generator class="native" />
-		</id>
+		<id name="id" type="integer" column="id"><generator class="native" /></id>
 		<property name="titre"			type="string"	column="titre" />
 		<property name="annee_sortie"	type="int"		column="annee" />
 		<property name="cout"			type="double"	column="cout" />
