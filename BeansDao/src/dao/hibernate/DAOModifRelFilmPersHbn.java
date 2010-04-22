@@ -46,17 +46,27 @@ public class DAOModifRelFilmPersHbn extends DAOHibernate implements DAOModifRelF
 	@Override
 	public void save(ModifRelationFilmPers obj)
 	{
-		Session s = this.connect();
-		s.save(obj);
-		this.close(s);
+		if (obj.getId() != -1)
+			this.update(obj);
+		else
+		{
+			Session s = this.connect();
+			s.save(obj);
+			this.close(s);
+		}
 	}
 
 	@Override
 	public void update(ModifRelationFilmPers obj)
 	{
-		Session s = this.connect();
-		s.update(obj);
-		this.close(s);
+		if (obj.getId() == -1)
+			this.save(obj);
+		else
+		{
+			Session s = this.connect();
+			s.update(obj);
+			this.close(s);
+		}
 	}
 
 }

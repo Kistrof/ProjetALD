@@ -47,17 +47,27 @@ public class DAOFilmHbn extends DAOHibernate implements DAOFilm
 	@Override
 	public void save(Film obj)
 	{
-		Session s = this.connect();
-		s.save(obj);
-		this.close(s);
+		if (obj.getId() != -1)
+			this.update(obj);
+		else
+		{
+			Session s = this.connect();
+			s.save(obj);
+			this.close(s);
+		}
 	}
 
 	@Override
 	public void update(Film obj)
 	{
-		Session s = this.connect();
-		s.update(obj);
-		this.close(s);
+		if (obj.getId() == -1)
+			this.save(obj);
+		else
+		{
+			Session s = this.connect();
+			s.update(obj);
+			this.close(s);
+		}
 	}
 
 }
