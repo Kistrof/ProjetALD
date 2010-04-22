@@ -11,5 +11,4 @@ public interface DAOPrix
 	public void save(Prix obj);
 	public void delete(Prix obj);
 	public void update(Prix obj);
-	public void saveOrUpdate(Prix obj);
 }

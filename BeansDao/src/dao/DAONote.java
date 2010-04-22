@@ -11,5 +11,4 @@ public interface DAONote
 	public void save(Note obj);
 	public void delete(Note obj);
 	public void update(Note obj);
-	public void saveOrUpdate(Note obj);
 }

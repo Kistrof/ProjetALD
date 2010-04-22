@@ -11,5 +11,4 @@ public interface DAORecompense
 	public void save(Recompense r);
 	public void delete(Recompense r);
 	public void update(Recompense r);
-	public void saveOrUpdate(Recompense r);
 }

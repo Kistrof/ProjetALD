@@ -11,5 +11,4 @@ public interface DAOCeremonie
 	public void save(Ceremonie c);
 	public void delete(Ceremonie c);
 	public void update(Ceremonie c);
-	public void saveOrUpdate(Ceremonie c);
 }

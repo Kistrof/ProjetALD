@@ -11,5 +11,4 @@ public interface DAOPersonne
 	public void save(Personne obj);
 	public void delete(Personne obj);
 	public void update(Personne obj);
-	public void saveOrUpdate(Personne obj);
 }

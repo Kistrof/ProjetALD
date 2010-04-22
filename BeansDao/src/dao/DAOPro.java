@@ -11,5 +11,4 @@ public interface DAOPro
 	public void save(Pro p);
 	public void delete(Pro p);
 	public void update(Pro p);
-	public void saveOrUpdate(Pro p);
 }

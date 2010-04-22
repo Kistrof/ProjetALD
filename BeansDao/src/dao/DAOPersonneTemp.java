@@ -11,5 +11,4 @@ public interface DAOPersonneTemp
 	public void save(PersonneTemp obj);
 	public void delete(PersonneTemp obj);
 	public void update(PersonneTemp obj);
-	public void saveOrUpdate(PersonneTemp obj);
 }
