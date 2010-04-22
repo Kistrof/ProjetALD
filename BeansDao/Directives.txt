@@ -12,7 +12,7 @@ Beans métier
   -> Appeler 'super(-1, null, null);' dans les constructeurs par défaut
 
 DAO
-- extends DAOHibernate implements DAOxxx
+- DAOTrucHbn extends DAOHibernate implements DAOTruc
 - Ajouter toute méthode utile pour l'application
   -> La mettre aussi dans l'interface pour garder la généricité
 
