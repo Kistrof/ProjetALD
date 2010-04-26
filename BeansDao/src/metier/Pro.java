@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Pro
 {
+	private int id;
 	private String pseudo;
 	private String pass;
 	private Date date_inscription;
@@ -11,20 +12,32 @@ public class Pro
 	
 	public Pro()
 	{
+		this.id=-1;
 		this.pseudo = "";
 		this.pass = "";
 		date_inscription = new Date();
 		derniere_visite = new Date();
 	}
 
-	public Pro(String pseudo, String pass, Date dateInscription, Date derniereVisite)
+	public Pro(int id,String pseudo, String pass, Date dateInscription, Date derniereVisite)
 	{
+		this.id=-1;
 		this.pseudo = pseudo;
 		this.pass = pass;
 		date_inscription = dateInscription;
 		derniere_visite = derniereVisite;
 	}
-
+	
+	public int getId()
+	{
+		return this.id;
+	}
+	
+	public void setId(int id)
+	{
+		this.id=id;
+	}
+	
 	public String getPseudo() {
 		return pseudo;
 	}
