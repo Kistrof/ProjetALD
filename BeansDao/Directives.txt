@@ -1,7 +1,7 @@
 Répartition des classes (4 chacun)
 - Damien : Personne, PersonneTemp, Prix, Ceremonie
 - Benoit : Recompense, RecompenseTemp, Pro, Note
-- Christophe : Film, FilmTemp, AjouteRelFilmPers, SupprRelFilmPers
+- Christophe : Film, FilmTemp, ModifRelationFilmPers
 
 Beans métier
 - Constructeur par défaut (initialisations par défaut, nombres à -1)
