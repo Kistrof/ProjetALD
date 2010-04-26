@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+<class name="metier.Pro" table="pro" lazy="false">
+	<id name="id" type="integer" column="id"><generator class="native" /></id>
+	<property name="login" type="string" column="login"/>
+	<property name="pass" type="string" column="pass"/>
+	<property name="date_inscription" type="date" column="date_inscription"/>
+	<property name="derniere_visite" type="date" column="derniere_visite"/>
+	
+</class>
+</hibernate-mapping>
