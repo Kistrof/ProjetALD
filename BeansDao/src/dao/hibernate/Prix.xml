@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.Prix" table="prix" lazy="false">
+		<id name="id" type="integer" column="id"><generator class="native" /></id>
+		<property name="titre"			type="string"	column="titre" />
+		<many-to-one name="ceremonie" column="ceremonieid" />
+	</class>
+</hibernate-mapping>

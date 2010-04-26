@@ -5,16 +5,19 @@ public class Prix
 	private int id;
 	private String titre;
 	
+	private Ceremonie ceremonie;
+	
 	public Prix()
 	{
 		this.id = -1;
 		this.titre = "";
 	}
 	
-	public Prix(int id, String titre)
+	public Prix(int id, String titre, Ceremonie ceremonie)
 	{
 		this.id = id;
 		this.titre = titre;
+		this.ceremonie = ceremonie;
 	}
 	
 	public int getId() {
@@ -33,6 +36,14 @@ public class Prix
 		this.titre = titre;
 	}
 	
+	public Ceremonie getCeremonie() {
+		return ceremonie;
+	}
+
+	public void setCeremonie(Ceremonie ceremonie) {
+		this.ceremonie = ceremonie;
+	}
+
 	public boolean equals(Object obj)
 	{
 		if (obj instanceof Prix)

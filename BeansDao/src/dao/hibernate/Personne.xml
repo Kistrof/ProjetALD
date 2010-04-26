@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.Personne" table="personne" lazy="false">
+		<id name="id" type="integer" column="id"><generator class="native" /></id>
+		<property name="nom"			type="string"	column="nom" />
+		<property name="prenom"	type="string"		column="prenom" />
+		<property name="naissance"			type="date"	column="naissance" />
+		<property name="photo"		type="string"	column="photo" />
+		<property name="date_maj"	type="date"	column="date_maj" />
+		<property name="popularite"		type="int"		column="popularite" />
+		<set name="filmographie" table="filmographie" lazy="false">
+			<key column="personneid" />
+			<many-to-many column="filmid" class="metier.Film" />
+		</set>
+		<set name="realisations" table="realisations" lazy="false">
+			<key column="personneid" />
+			<many-to-many column="filmid" class="metier.Film" />
+		</set>
+		<set name="productions" table="production" lazy="false">
+			<key column="personneid" />
+			<many-to-many column="filmid" class="metier.Film" />
+		</set>
+		<set name="recompenses" lazy="false" cascade="all">
+			<key column="personneid" />
+			<one-to-many class="metier.Recompense" />
+		</set>
+	</class>
+</hibernate-mapping>

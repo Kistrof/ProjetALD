@@ -69,7 +69,22 @@ public class Personne {
 		date_maj = dateMaj;
 		this.popularite = popularite;
 	}
+	
+	public boolean equals(Object o)
+	{
+		if (o instanceof Personne)
+		{
+			Personne p = (Personne)o;
+			return (this.getId() == p.getId());
+		}
+		else return false;
+	}
 
+	public String toString()
+	{
+		return "Film[id="+this.id+";nom="+this.nom+";prenom="+this.prenom+"]";
+	}
+	
 	public int getId() {
 		return id;
 	}
