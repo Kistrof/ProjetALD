@@ -8,10 +8,16 @@
 	<property name="show_sql">true</property>
 	
 	<!--fichiers de mapping -->
+	<mapping resource="dao/hibernate/Ceremonie.xml" />
 	<mapping resource="dao/hibernate/Film.xml" />
 	<mapping resource="dao/hibernate/FilmTemp.xml" />
 	<mapping resource="dao/hibernate/ModifRelationFilmPers.xml" />
-	
-	
+	<mapping resource="dao/hibernate/Note.xml" />
+	<mapping resource="dao/hibernate/Personne.xml" />
+	<mapping resource="dao/hibernate/PersonneTemp.xml" />
+	<mapping resource="dao/hibernate/Prix.xml" />
+	<mapping resource="dao/hibernate/Pro.xml" />
+	<mapping resource="dao/hibernate/Recompense.xml" />
+	<mapping resource="dao/hibernate/RecompenseTemp.xml" />
 	
 </hibernate-configuration>
