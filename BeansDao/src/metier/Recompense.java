@@ -3,42 +3,27 @@ package metier;
 import java.util.Date;
 
 
-
-
 public class Recompense {
 	 private int id;
-	 private String prix;
-	 private String ceremonie;
+	 private Prix prix;
 	 private int annee;
 	 private Date date_maj;
 
 	 public Recompense()
 	 {
 		 this.id=-1;
-		 this.prix="";
-		 this.ceremonie="";
+		 this.prix=null;
 		 this.annee=-1;
 		 this.date_maj=new Date(0);
 	 }
 	 
-	 public Recompense(int id,String prix,String ceremonie,int annee,Date date)
+	 public Recompense(int id,Prix prix,int annee,Date maj)
 	 {
 		 this();
 		  this.id=id;
 		  if(prix!=null)this.prix=prix;
-		  if(ceremonie!=null)this.ceremonie=ceremonie;
-		  if(date != null)this.date_maj=date;
+		  if(maj != null)this.date_maj=maj;
 		  this.annee=annee;
-	 }
-
-	 
-	 public Recompense(Recompense recompense)
-	 {
-		  this.id=recompense.getId();
-		  this.prix=recompense.getPrix();
-		  this.ceremonie=recompense.getCeremonie();
-		  this.date_maj=recompense.getDate_maj();
-
 	 }
 	
 	public int getId() {
@@ -49,20 +34,12 @@ public class Recompense {
 		this.id = id;
 	}
 	
-	public String getPrix() {
+	public Prix getPrix() {
 		return prix;
 	}
 	
-	public void setPrix(String prix) {
+	public void setPrix(Prix prix) {
 		this.prix = prix;
-	}
-	
-	public String getCeremonie() {
-		return ceremonie;
-	}
-	
-	public void setCeremonie(String ceremonie) {
-		this.ceremonie = ceremonie;
 	}
 	
 	public int getAnnee() {
