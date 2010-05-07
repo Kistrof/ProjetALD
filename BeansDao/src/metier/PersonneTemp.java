@@ -32,7 +32,7 @@ public class PersonneTemp extends Modification {
 	 */
 	public PersonneTemp(int id, String nom, String prenom, Date naissance,
 			String photo, Recompense supprRecompense) {
-		super();
+		super(-1, null, null);
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
