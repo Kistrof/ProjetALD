@@ -1,6 +1,3 @@
-/**
- * 
- */
 package dao.hibernate;
 
 import java.util.ArrayList;

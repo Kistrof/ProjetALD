@@ -4,15 +4,18 @@ import java.util.ArrayList;
 
 import org.hibernate.Session;
 
+import metier.Personne;
 import metier.PersonneTemp;
+import dao.DAOPersonne;
 import dao.DAOPersonneTemp;
 
-public class DAOPersonneTempHbn extends DAOHibernate implements DAOPersonneTemp {
+public class DAOPersonneTempHbn extends DAOHibernate implements DAOPersonneTemp
+{
 
-public DAOPersonneTempHbn() {
-		
+	public DAOPersonneTempHbn()
+	{
 	}
-	
+
 	@Override
 	public void delete(PersonneTemp obj)
 	{

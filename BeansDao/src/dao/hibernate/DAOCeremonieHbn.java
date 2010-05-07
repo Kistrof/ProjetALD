@@ -7,10 +7,10 @@ import org.hibernate.Session;
 import metier.Ceremonie;
 import dao.DAOCeremonie;
 
-public class DAOCeremonieHbn extends DAOHibernate implements DAOCeremonie {
-
-	public DAOCeremonieHbn() {
-		
+public class DAOCeremonieHbn extends DAOHibernate implements DAOCeremonie
+{
+	public DAOCeremonieHbn()
+	{
 	}
 
 	@Override
