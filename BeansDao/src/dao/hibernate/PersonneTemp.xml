@@ -1,17 +1,15 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="metier.PersonneTemp" table="personne_temp" lazy="false">
 		<id name="id" type="integer" column="id"><generator class="native" /></id>
-		<proprety name="nom" type="string" columun="nom" />
-		<proprety name="prenom" type="string" columun="prenom" />
-		<proprety name="naissance" type="date" columun="naissance" />
-		<proprety name="photo" type="string" columun="photo" />
-		<proprety name="date_maj" type="date" columun="date_maj" />
-		<proprety name="popularite" type="integer" columun="popularite" />
-		<set name="personnes" lazy="false">
-			<key column="personneid"/>
-			<one-to-many class="metier.Personne"/>		
-		</set>
+		<many-to-one name="original"					column="personneid" />
+		<many-to-one name="auteur"						column="prologin" />
+		<property	name="soumission"	type="date"		column="soumission" />
+		<property	name="nom"			type="string"	column="nom" />
+		<property	name="prenom"		type="string"	column="prenom" />
+		<property	name="naissance"	type="date"		column="naissance" />
+		<property	name="photo"		type="string"	column="photo" />
+		<many-to-one name="suppr_recompense"			column="suppr_recompense" />
 	</class>
 </hibernate-mapping>

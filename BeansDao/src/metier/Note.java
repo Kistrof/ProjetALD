@@ -1,7 +1,11 @@
 package metier;
 
-public class Note
+import java.io.Serializable;
+
+public class Note implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+	
 	private int valeur;
 	private Pro votant;
 	private Film film;
@@ -52,9 +56,17 @@ public class Note
 	public Pro getVotant() {
 		return votant;
 	}
+	
+	public void setVotant(Pro p) {
+		this.votant = p;
+	}
 
 	public Film getFilm() {
 		return film;
+	}
+	
+	public void setFilm(Film f) {
+		this.film = f;
 	}
 	
 }

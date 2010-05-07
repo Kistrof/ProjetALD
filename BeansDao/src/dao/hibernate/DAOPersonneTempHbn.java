@@ -28,18 +28,18 @@ public class DAOPersonneTempHbn extends DAOHibernate implements DAOPersonneTemp
 	@Override
 	public PersonneTemp get(int id)
 	{
-		PersonneTemp f = null;
+		PersonneTemp p = null;
 		Session s = this.connect();
-		f = (PersonneTemp) s.get(PersonneTemp.class, id);
+		p = (PersonneTemp) s.get(PersonneTemp.class, id);
 		this.close(s);
-		return f;
+		return p;
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
 	public ArrayList<PersonneTemp> loadAll()
 	{
-		ArrayList<PersonneTemp>tab = null;
+		ArrayList<PersonneTemp> tab = null;
 		Session s = this.connect();
 		tab = (ArrayList<PersonneTemp>) s.createQuery("FROM PersonneTemp").list();
 		this.close(s);
@@ -71,5 +71,4 @@ public class DAOPersonneTempHbn extends DAOHibernate implements DAOPersonneTemp
 			this.close(s);
 		}
 	}
-
 }

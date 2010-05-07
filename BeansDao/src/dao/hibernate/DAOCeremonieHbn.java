@@ -5,13 +5,10 @@ import java.util.ArrayList;
 import org.hibernate.Session;
 
 import metier.Ceremonie;
-import metier.Ceremonie;
-import dao.DAOCeremonie;
 import dao.DAOCeremonie;
 
 public class DAOCeremonieHbn extends DAOHibernate implements DAOCeremonie
 {
-
 	public DAOCeremonieHbn()
 	{
 	}
@@ -28,11 +25,11 @@ public class DAOCeremonieHbn extends DAOHibernate implements DAOCeremonie
 	@Override
 	public Ceremonie get(int id)
 	{
-		 Ceremonie f = null;
+		Ceremonie c = null;
 		Session s = this.connect();
-		f = (Ceremonie) s.get(Ceremonie.class, id);
+		c = (Ceremonie) s.get(Ceremonie.class, id);
 		this.close(s);
-		return f;
+		return c;
 	}
 
 	@Override
@@ -71,5 +68,4 @@ public class DAOCeremonieHbn extends DAOHibernate implements DAOCeremonie
 			this.close(s);
 		}
 	}
-
 }

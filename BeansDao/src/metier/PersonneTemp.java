@@ -12,7 +12,6 @@ import java.util.Date;
  */
 public class PersonneTemp extends Modification {
 
-	private int id = -1;
 	private String nom = "";
 	private String prenom = "";
 	private Date naissance;
@@ -31,14 +30,32 @@ public class PersonneTemp extends Modification {
 	 * @param supprRecompense
 	 */
 	public PersonneTemp(int id, String nom, String prenom, Date naissance,
-			String photo, Recompense supprRecompense) {
-		super(-1, null, null);
-		this.id = id;
+			String photo, Recompense supprRecompense, Pro auteur, Date dateModif) {
+		super(id, auteur, dateModif);
 		this.nom = nom;
 		this.prenom = prenom;
 		this.naissance = naissance;
 		this.photo = photo;
 		suppr_recompense = supprRecompense;
+	}
+	
+	public PersonneTemp() {
+		super(-1, null, null);
+	}
+	
+	public boolean equals(Object o)
+	{
+		if (o instanceof PersonneTemp)
+		{
+			PersonneTemp p = (PersonneTemp)o;
+			return (this.getId() == p.getId());
+		}
+		else return false;
+	}
+	
+	public String toString()
+	{
+		return super.toString()+";type=Personne;original="+this.original+"]";
 	}
 	
 	public int getId() {

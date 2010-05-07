@@ -4,18 +4,19 @@ import java.util.ArrayList;
 
 import org.hibernate.Session;
 
-import metier.Film;
 import metier.Personne;
-import dao.DAOFilm;
 import dao.DAOPersonne;
 
-public class DAOPersonneHbn extends DAOHibernate implements DAOPersonne
-{
+/**
+ * @author zuzudesbois
+ *
+ */
+public class DAOPersonneHbn extends DAOHibernate implements DAOPersonne {
 
-	public DAOPersonneHbn()
-	{
+	public DAOPersonneHbn() {
+		
 	}
-
+	
 	@Override
 	public void delete(Personne obj)
 	{
@@ -28,11 +29,11 @@ public class DAOPersonneHbn extends DAOHibernate implements DAOPersonne
 	@Override
 	public Personne get(int id)
 	{
-		Personne f = null;
+		Personne p = null;
 		Session s = this.connect();
-		f = (Personne) s.get(Personne.class, id);
+		p = (Personne) s.get(Personne.class, id);
 		this.close(s);
-		return f;
+		return p;
 	}
 
 	@Override
@@ -71,5 +72,4 @@ public class DAOPersonneHbn extends DAOHibernate implements DAOPersonne
 			this.close(s);
 		}
 	}
-
 }

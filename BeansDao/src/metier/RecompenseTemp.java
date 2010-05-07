@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class RecompenseTemp extends Modification {
 
-	private String prix;
+	private Prix prix;
 	private int annee;
 	private Recompense original;
 
@@ -16,7 +16,7 @@ public class RecompenseTemp extends Modification {
 		this.original = null;
 	}
 
-	public RecompenseTemp(int id, Pro auteur, Date dt, String prix, int annee, Recompense original)
+	public RecompenseTemp(int id, Pro auteur, Date dt, Prix prix, int annee, Recompense original)
 	{
 		super(id, auteur, dt);
 		this.prix = prix;
@@ -32,11 +32,11 @@ public class RecompenseTemp extends Modification {
 		this.id = id;
 	}
 
-	public String getPrix() {
+	public Prix getPrix() {
 		return prix;
 	}
 
-	public void setPrix(String prix) {
+	public void setPrix(Prix prix) {
 		this.prix = prix;
 	}
 

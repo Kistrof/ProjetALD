@@ -2,18 +2,15 @@ package dao.hibernate;
 
 import java.util.ArrayList;
 
-import metier.Prix;
-
 import org.hibernate.Session;
 
+import metier.Prix;
 import dao.DAOPrix;
 
+public class DAOPrixHbn extends DAOHibernate implements DAOPrix {
 
-public class DAOPrixHbn extends DAOHibernate implements DAOPrix
-{
-
-	public DAOPrixHbn()
-	{
+	public DAOPrixHbn() {
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -28,11 +25,11 @@ public class DAOPrixHbn extends DAOHibernate implements DAOPrix
 	@Override
 	public Prix get(int id)
 	{
-		Prix f = null;
+		Prix p = null;
 		Session s = this.connect();
-		f = (Prix) s.get(Prix.class, id);
+		p = (Prix) s.get(Prix.class, id);
 		this.close(s);
-		return f;
+		return p;
 	}
 
 	@Override
@@ -71,5 +68,4 @@ public class DAOPrixHbn extends DAOHibernate implements DAOPrix
 			this.close(s);
 		}
 	}
-
 }
