@@ -1,7 +1,6 @@
 package test;
 
 import java.sql.Date;
-
 import metier.*;
 import dao.*;
 import dao.hibernate.*;
