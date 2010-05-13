@@ -124,5 +124,21 @@ public class FilmTemp extends Modification
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public Film getOriginal() {
+		return original;
+	}
+
+	public void setOriginal(Film original) {
+		this.original = original;
+	}
+
+	public Recompense getSuppr_recompense() {
+		return suppr_recompense;
+	}
+
+	public void setSuppr_recompense(Recompense supprRecompense) {
+		suppr_recompense = supprRecompense;
+	}
 	
 }
