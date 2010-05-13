@@ -11,7 +11,6 @@ public class testDaoPro {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 			
 			DAOProHbn daoPro= new DAOProHbn();
 			Pro p=daoPro.get("ben");

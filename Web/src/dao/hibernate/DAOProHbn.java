@@ -47,7 +47,6 @@ public class DAOProHbn extends DAOHibernate implements DAOPro
 
 	@Override
 	public void save(Pro p) {
-		// TODO Auto-generated method stub
 		Session s=this.connect();
 		s.save(p);
 		this.close(s);
@@ -56,7 +55,6 @@ public class DAOProHbn extends DAOHibernate implements DAOPro
 
 	@Override
 	public void update(Pro p) {
-		// TODO Auto-generated method stub
 		Session s=this.connect();
 		s.update(p);
 		this.close(s);
