@@ -5,6 +5,7 @@ CREATE TABLE personne (
   naissance  date, 
   photo      varchar(255), 
   popularite int(10) NOT NULL, 
+  date_maj   timestamp, 
   PRIMARY KEY (id));
 CREATE TABLE film (
   id           int(10) NOT NULL AUTO_INCREMENT, 
