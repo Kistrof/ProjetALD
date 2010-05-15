@@ -36,12 +36,12 @@
 
 	<action-mappings>
 		
-		<action path="/AfficheFilm" type="org.springframework.web.struts.DelegatingActionProxy">
-			<forward name="vueAfficheFilm" path="AfficheFilm.jsp" />
+		<action path="/AfficheFilm" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="vueAfficheFilm" path="/vues/AfficheFilm.jsp" />
 		</action>
 		
-		<action path="/verifAddOrUpdateFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="Erreurs.jsp">
-			<forward name="AjoutFilmOK" path="Accueil.jsp" />
+		<action path="/verifAddOrUpdateFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
+			<forward name="AjoutFilmOK" path="/vues/Accueil.jsp" />
 		</action>
 		
 		
