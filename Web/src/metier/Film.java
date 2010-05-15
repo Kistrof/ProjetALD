@@ -1,7 +1,8 @@
 package metier;
 
 import java.util.Date;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Film
 {
@@ -14,10 +15,10 @@ public class Film
 	private Date date_maj;
 	private double note_moyenne;
 	
-	private ArrayList<Recompense> recompenses;
-	private ArrayList<Personne> producteurs;
-	private ArrayList<Personne> realisateurs;
-	private ArrayList<Personne> acteurs;
+	private List<Recompense> recompenses;
+	private List<Personne> producteurs;
+	private List<Personne> realisateurs;
+	private List<Personne> acteurs;
 	
 	/**
 	 * Construit un film vide
@@ -32,10 +33,10 @@ public class Film
 		description = "";
 		date_maj = new Date();
 		note_moyenne = -1;
-		recompenses = new ArrayList<Recompense>();
-		producteurs = new ArrayList<Personne>();
-		realisateurs = new ArrayList<Personne>();
-		acteurs = new ArrayList<Personne>();
+		recompenses = new LinkedList<Recompense>();
+		producteurs = new LinkedList<Personne>();
+		realisateurs = new LinkedList<Personne>();
+		acteurs = new LinkedList<Personne>();
 	}
 	
 	/**
@@ -53,8 +54,7 @@ public class Film
 	 * @param realisateurs ArrayList<Personne>, Liste des réalisateurs
 	 * @param acteurs ArrayList<Personne>, Liste des acteurs
 	 */
-	public Film(int id, String titre, int anneeSortie, double cout, String affiche, String description, Date dateMaj, double noteMoyenne,
-			ArrayList<Recompense> recompenses, ArrayList<Personne> producteurs, ArrayList<Personne> realisateurs, ArrayList<Personne> acteurs)
+	public Film(int id, String titre, int anneeSortie, double cout, String affiche, String description, Date dateMaj, double noteMoyenne)
 	{
 		this.id = id;
 		if (titre != null) this.titre = titre;
@@ -64,10 +64,6 @@ public class Film
 		if (description != null) this.description = description;
 		if (dateMaj != null) date_maj = dateMaj;
 		note_moyenne = noteMoyenne;
-		if (recompenses != null) this.recompenses = recompenses;
-		if (producteurs != null) this.producteurs = producteurs;
-		if (realisateurs != null) this.realisateurs = realisateurs;
-		if (acteurs != null) this.acteurs = acteurs;
 	}
 	
 	public boolean equals(Object o)
@@ -262,35 +258,35 @@ public class Film
 		note_moyenne = noteMoyenne;
 	}
 
-	public ArrayList<Recompense> getRecompenses() {
+	public List<Recompense> getRecompenses() {
 		return recompenses;
 	}
 
-	public void setRecompenses(ArrayList<Recompense> recompenses) {
+	public void setRecompenses(List<Recompense> recompenses) {
 		this.recompenses = recompenses;
 	}
 
-	public ArrayList<Personne> getProducteurs() {
+	public List<Personne> getProducteurs() {
 		return producteurs;
 	}
 
-	public void setProducteurs(ArrayList<Personne> producteurs) {
+	public void setProducteurs(List<Personne> producteurs) {
 		this.producteurs = producteurs;
 	}
 
-	public ArrayList<Personne> getRealisateurs() {
+	public List<Personne> getRealisateurs() {
 		return realisateurs;
 	}
 
-	public void setRealisateurs(ArrayList<Personne> realisateurs) {
+	public void setRealisateurs(List<Personne> realisateurs) {
 		this.realisateurs = realisateurs;
 	}
 
-	public ArrayList<Personne> getActeurs() {
+	public List<Personne> getActeurs() {
 		return acteurs;
 	}
 
-	public void setActeurs(ArrayList<Personne> acteurs) {
+	public void setActeurs(List<Personne> acteurs) {
 		this.acteurs = acteurs;
 	}
 

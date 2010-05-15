@@ -4,7 +4,7 @@
 
 package metier;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 
 /**
@@ -35,16 +35,16 @@ public class Personne {
 	private int popularite;
 	
 	/** liste des films q'une personne a joué */ 
-	private ArrayList<Film> filmographie;
+	private List<Film> filmographie;
 	
 	/** liste des films qu'une personne a réalisé */
-	private ArrayList<Film> realisations;
+	private List<Film> realisations;
 	
 	/** liste des films qu'une personne a produit */
-	private ArrayList<Film> productions;
+	private List<Film> productions;
 	
 	/** liste des recompense reçu */
-	private ArrayList<Recompense> recompenses;
+	private List<Recompense> recompenses;
 
 	public Personne() {
 	}
@@ -141,35 +141,35 @@ public class Personne {
 		this.popularite = popularite;
 	}
 
-	public ArrayList<Film> getFilmographie() {
+	public List<Film> getFilmographie() {
 		return filmographie;
 	}
 
-	public void setFilmographie(ArrayList<Film> filmographie) {
+	public void setFilmographie(List<Film> filmographie) {
 		this.filmographie = filmographie;
 	}
 
-	public ArrayList<Film> getRealisations() {
+	public List<Film> getRealisations() {
 		return realisations;
 	}
 
-	public void setRealisations(ArrayList<Film> realisations) {
+	public void setRealisations(List<Film> realisations) {
 		this.realisations = realisations;
 	}
 
-	public ArrayList<Film> getProductions() {
+	public List<Film> getProductions() {
 		return productions;
 	}
 
-	public void setProductions(ArrayList<Film> productions) {
+	public void setProductions(List<Film> productions) {
 		this.productions = productions;
 	}
 	
-	public ArrayList<Recompense> getRecompenses() {
+	public List<Recompense> getRecompenses() {
 		return recompenses;
 	}
 
-	public void setRecompenses(ArrayList<Recompense> recompenses) {
+	public void setRecompenses(List<Recompense> recompenses) {
 		this.recompenses = recompenses;
 	}
 
