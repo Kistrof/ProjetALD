@@ -10,6 +10,7 @@
 		
 		<form-bean name="formActionFilm"       type="ActionFormFilm" />
 		<form-bean name="formActionNoterFilm"  type="ActionFormNoterFilm" />
+		<form-bean name="formVerifLogin"       type="struts.actionForm.ActionFormVerifLogin"/>
 		
 		
 		
@@ -38,6 +39,12 @@
 		
 		<action path="/AfficheFilm" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
 			<forward name="vueAfficheFilm" path="/vues/AfficheFilm.jsp" />
+		</action>
+		
+	  <action path="/AfficheFormConnexion" forward="/vues/FormConnexion.jsp" />
+		
+		<action path="/VerifLogin" type="org.springframework.web.struts.DelegatingActionProxy" name="formVerifLogin" scope="request" validate="true" input="/vues/Erreurs.jsp">
+		
 		</action>
 		
 		<action path="/verifAddOrUpdateFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">

@@ -4,6 +4,7 @@
 
 <!-- =========================================== DAO -->
 	
+	 
 	<bean id="daoCeremonie"         class="dao.hibernate.DAOCeremonieHbn" />
 	<bean id="daoFilm"              class="dao.hibernate.DAOFilmHbn" />
 	<bean id="daoFilmTemp"          class="dao.hibernate.DAOFilmTempHbn" />
@@ -25,6 +26,12 @@
 	<bean name="/verifAddOrUpdateFilm" class="struts.action.ActionAjoutFilm">
 		<property name="daoFilmTemp" ref="daoFilmTemp" />
 	</bean>
+	
+	<bean name="/VerifLogin" class="struts.action.ActionVerifLogin">
+		<property name="daoPro" ref="daoPro" />
+	</bean>
+	
+
 	
 	
 	
