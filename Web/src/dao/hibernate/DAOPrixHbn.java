@@ -10,7 +10,6 @@ import dao.DAOPrix;
 public class DAOPrixHbn extends DAOHibernate implements DAOPrix {
 
 	public DAOPrixHbn() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
