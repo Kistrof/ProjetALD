@@ -8,8 +8,8 @@
 
 	<form-beans>
 		
-		<form-bean name="formActionFilm"       type="ActionFormFilm" />
-		<form-bean name="formActionNoterFilm"  type="ActionFormNoterFilm" />
+		<form-bean name="formActionFilm"       type="struts.actionForm.ActionFormFilm" />
+		<form-bean name="formActionNoterFilm"  type="struts.actionForm.ActionFormNoterFilm" />
 		<form-bean name="formVerifLogin"       type="struts.actionForm.ActionFormVerifLogin"/>
 		
 		
