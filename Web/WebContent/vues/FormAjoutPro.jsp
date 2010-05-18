@@ -15,15 +15,23 @@
  <label for="login"><bean:message key="formajoutpro.login"/></label>
  <html:text property="pseudo" />
 	 <span class="spanError">
-	 	<html:errors property="login" />
+	 	<html:errors property="formrecherche.erreurs.champs_vide" />
 	 </span>
  <br/>
  <label for="pass"><bean:message key="formajoutpro.pass"/></label>
-<html:text property="pass"/>
+<html:password property="pass"/>
  	<span class="spanError">
  		<html:errors property="pass"/>
  	</span>
 <br/>
+ <label for="pass"><bean:message key="formajoutpro.repass"/></label>
+ <html:password property="repass"/>
+ <span class="spanError">
+ 	<html:errors property="repass_erreur"/>
+ 	<html:errors property="repass_vide"/>
+ </span>
+ <br/>
+ 
 <html:submit><bean:message key="formajoutpro.bouton_valider"/></html:submit>
 </html:form>
 
