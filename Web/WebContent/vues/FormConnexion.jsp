@@ -18,7 +18,10 @@
 				<bean:message key="formconnexion.label_login"/>
 			</td>
 			<td>
-				<html:text property="login" />			
+				<html:text property="login" />
+					<span class="spanError">
+						<html:errors property="login"/>
+					</span>	
 			</td>
 		</tr>
 		<tr>
@@ -27,6 +30,9 @@
 			</td>
 			<td>
 				<html:password property="pass" />
+					<span class="spanError">
+						<html:errors property="pass"/>
+					</span>	
 			</td>
 		</tr>
 		<tr colspan="2">

@@ -11,6 +11,7 @@
 		<form-bean name="formActionFilm"       type="struts.actionForm.ActionFormFilm" />
 		<form-bean name="formActionNoterFilm"  type="struts.actionForm.ActionFormNoterFilm" />
 		<form-bean name="formVerifLogin"       type="struts.actionForm.ActionFormVerifLogin"/>
+		<form-bean name="formAjoutPro"         type="struts.actionForm.ActionFormAjoutPro"/>
 		
 		
 		
@@ -41,10 +42,22 @@
 			<forward name="vueAfficheFilm" path="/vues/AfficheFilm.jsp" />
 		</action>
 		
+		<action path="/Deconnecte" type="struts.action.ActionDeconnecte" >
+			<forward name="retourAccueil" path="/vues/Accueil.jsp"/>
+		</action>
+		
 	  <action path="/AfficheFormConnexion" forward="/vues/FormConnexion.jsp" />
+	  
+	  <action path="/AfficheFormAjoutPro" forward="/vues/FormAjoutPro.jsp"/>
+	  
+	  <action path="/Accueil"  forward="/vues/Accueil.jsp"/>
+		<action path="/VerifLogin" type="org.springframework.web.struts.DelegatingActionProxy" name="formVerifLogin" scope="request" validate="true" input="/vues/FormConnexion.jsp">
+		 <forward name="RetourAccueil" path="/vues/Accueil.jsp"/>
+		 <forward name="ErreurLogin" path="/vues/ErreurLogin.jsp"/>
+		</action>
 		
-		<action path="/VerifLogin" type="org.springframework.web.struts.DelegatingActionProxy" name="formVerifLogin" scope="request" validate="true" input="/vues/Erreurs.jsp">
-		
+		<action path="/AjoutPro" type="org.springframework.web.struts.DelegatingActionProxy" name="formAjoutPro" scope="request" validate="true" input="/vues/FormAjoutPro.jsp">
+		 
 		</action>
 		
 		<action path="/verifAddOrUpdateFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">

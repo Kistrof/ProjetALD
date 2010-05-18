@@ -31,6 +31,10 @@
 		<property name="daoPro" ref="daoPro" />
 	</bean>
 	
+	<bean name="/AjoutPro" class="struts.action.ActionAjoutPro">
+		<property name="daoPro" ref="daoPro"/>
+	</bean>
+	
 
 	
 	

@@ -33,13 +33,18 @@ public class ActionVerifLogin extends Action {
 		ActionFormVerifLogin f=(ActionFormVerifLogin)form;
 		String login=f.getLogin();
 		String pass=f.getPass();
+		String forward="";
 		if(daoPro.verifLogin(login,pass))
 		{
 			HttpSession session = request.getSession();
 			Pro p=daoPro.get(login);
-			session.setAttribute("Pro",p );
-		}
-		return mapping.findForward("ajoutFilmOK");
+			session.setAttribute("PRO",p );
+			forward="RetourAccueil";
+			System.out.println(session.getAttribute("PRO"));
+		}else
+			forward="ErreurLogin";
+		
+		return mapping.findForward(forward);
 	}
 	
 
