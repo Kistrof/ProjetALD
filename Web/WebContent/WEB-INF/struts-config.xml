@@ -57,8 +57,9 @@
 		 <forward name="ErreurLogin" path="/vues/ErreurLogin.jsp"/>
 		</action>
 		
-		<action path="/AjoutPro" type="org.springframework.web.struts.DelegatingActionProxy" name="formAjoutPro" scope="request" validate="true" input="/vues/FormAjoutPro.jsp">
-		 
+		<action path="/AjoutPro" type="org.springframework.web.struts.DelegatingActionProxy" name="formAjoutPro" scope="request" validate="true" input="/vues/FormAjoutPro.jsp" >
+		 <forward name="AjoutProOk" path="/vues/Accueil.jsp"/>
+		 </action>
 
 		
 		<action path="/verifAddOrUpdateFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
