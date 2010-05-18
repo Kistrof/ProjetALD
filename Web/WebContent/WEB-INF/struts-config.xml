@@ -42,7 +42,7 @@
 			<forward name="vueAfficheFilm" path="/vues/AfficheFilm.jsp" />
 		</action>
 		
-<<<<<<< HEAD
+
 		<action path="/Deconnecte" type="struts.action.ActionDeconnecte" >
 			<forward name="retourAccueil" path="/vues/Accueil.jsp"/>
 		</action>
@@ -59,12 +59,7 @@
 		
 		<action path="/AjoutPro" type="org.springframework.web.struts.DelegatingActionProxy" name="formAjoutPro" scope="request" validate="true" input="/vues/FormAjoutPro.jsp">
 		 
-=======
-		<action path="/AfficheFormConnexion" forward="/vues/FormConnexion.jsp" />
-		
-		<action path="/VerifLogin" type="org.springframework.web.struts.DelegatingActionProxy" name="formVerifLogin" scope="request" validate="true" input="/vues/Erreurs.jsp">
->>>>>>> 4ff17325d3b0a600bde5ded6bca90dfd0c70a0c7
-		</action>
+
 		
 		<action path="/verifAddOrUpdateFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
 			<forward name="AjoutFilmOK" path="/vues/Accueil.jsp" />
