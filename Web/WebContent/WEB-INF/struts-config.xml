@@ -12,7 +12,7 @@
 		<form-bean name="formActionNoterFilm"  type="struts.actionForm.ActionFormNoterFilm" />
 		<form-bean name="formVerifLogin"       type="struts.actionForm.ActionFormVerifLogin"/>
 		<form-bean name="formAjoutPro"         type="struts.actionForm.ActionFormAjoutPro"/>
-		
+		<form-bean name="formRecherche" 	   type="struts.actionForm.ActionFormRecherche"/>
 		
 		
 		
@@ -64,6 +64,12 @@
 		
 		<action path="/verifAddOrUpdateFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
 			<forward name="AjoutFilmOK" path="/vues/Accueil.jsp" />
+		</action>
+		
+		<action path="/AfficheFormRecherche" forward="/vues/FormRecherche.jsp"/>
+		
+		<action path="/Recherche" type="org.springframework.web.struts.DelegatingActionProxy" name="formRecherche" scope="request" validate="true" input="/vues/FormRecherche.jsp">
+			<forward name="RechercheOk" path="/vues/FormRecherche.jsp" />
 		</action>
 		
 		
