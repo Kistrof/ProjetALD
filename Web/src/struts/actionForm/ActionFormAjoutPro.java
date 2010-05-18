@@ -13,7 +13,16 @@ public class ActionFormAjoutPro extends ActionForm {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String pseudo;
-	 private String pass;
+	private String pass;
+	private String repass; 
+	
+	
+	public String getRepass() {
+		return repass;
+	}
+	public void setRepass(String repass) {
+		this.repass = repass;
+	}
 	public String getPseudo() {
 		return pseudo;
 	}
@@ -33,6 +42,10 @@ public class ActionFormAjoutPro extends ActionForm {
 		
 		if (this.pseudo.equals("")) erreurs.add("login", new ActionMessage("global.erreur.login_vide"));
 		if (this.pass.equals("")) erreurs.add("pass", new ActionMessage("global.erreur.pass_vide"));
+		if(this.repass.equals("")) 
+			erreurs.add("repass_vide",new ActionMessage("formajoutpro.erreur.repass_vide"));
+		else
+			if(!this.repass.equals(this.pass))erreurs.add("repass_erreur",new ActionMessage("formajoutpro.erreur.repass_erreur"));
 		System.out.println(erreurs);
 		return erreurs;
 	}
