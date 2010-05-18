@@ -9,15 +9,15 @@
 		<property name="photo"		type="string"	column="photo" />
 		<property name="date_maj"	type="date"	column="date_maj" />
 		<property name="popularite"		type="int"		column="popularite" />
-		<bag name="filmographie" table="filmographie" lazy="false">
+		<bag name="filmographie" table="acteurs" lazy="false">
 			<key column="personneid" />
 			<many-to-many column="filmid" class="metier.Film" />
 		</bag>
-		<bag name="realisations" table="realisations" lazy="false">
+		<bag name="realisations" table="realisateurs" lazy="false">
 			<key column="personneid" />
 			<many-to-many column="filmid" class="metier.Film" />
 		</bag>
-		<bag name="productions" table="production" lazy="false">
+		<bag name="productions" table="producteurs" lazy="false">
 			<key column="personneid" />
 			<many-to-many column="filmid" class="metier.Film" />
 		</bag>
