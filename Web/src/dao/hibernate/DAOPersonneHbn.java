@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.hibernate.Session;
 
+
 import metier.Personne;
 import dao.DAOPersonne;
 
@@ -44,6 +45,15 @@ public class DAOPersonneHbn extends DAOHibernate implements DAOPersonne {
 		Session s = this.connect();
 		tab = (ArrayList<Personne>) s.createQuery("FROM Personne").list();
 		this.close(s);
+		return tab;
+	}
+	@SuppressWarnings("unchecked")
+	public ArrayList<Personne> loadAll(String chaine) {
+		// TODO Auto-generated method stub
+		ArrayList<Personne> tab=null;
+		Session s=this.connect();
+		System.out.println(chaine);
+		tab=(ArrayList<Personne>)s.createQuery("FROM Personne where nom LIKE'%"+chaine+"%'").list();
 		return tab;
 	}
 
