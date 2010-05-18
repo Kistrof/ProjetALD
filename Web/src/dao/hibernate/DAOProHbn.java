@@ -2,13 +2,10 @@ package dao.hibernate;
 
 import java.util.ArrayList;
 
-import javax.management.Query;
-
 import org.hibernate.Session;
 
 import dao.DAOPro;
 import metier.Pro;
-
 
 public class DAOProHbn extends DAOHibernate implements DAOPro
 {

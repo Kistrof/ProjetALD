@@ -1,8 +1,6 @@
 package metier;
 
 import java.sql.Timestamp;
-import java.util.Date;
-import java.util.Calendar;
 
 public class Pro
 {

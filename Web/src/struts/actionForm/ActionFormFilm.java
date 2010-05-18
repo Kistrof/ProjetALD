@@ -10,12 +10,19 @@ public class ActionFormFilm extends ActionForm
 {
 	private static final long serialVersionUID = 1L;
 	
+	private int codeOriginal = -1;
 	private String titre = "";
 	private int annee_sortie = -1;
 	private double cout = -1;
 	private String affiche = "";
 	private String description = "";
 	
+	public int getCodeOriginal() {
+		return codeOriginal;
+	}
+	public void setCodeOriginal(int codeOriginal) {
+		this.codeOriginal = codeOriginal;
+	}
 	public String getTitre() {
 		return titre;
 	}
@@ -47,18 +54,13 @@ public class ActionFormFilm extends ActionForm
 		this.description = description;
 	}
 	
-	public ActionFormFilm() {
-	}
-	
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request)
 	{
 		ActionErrors erreurs = new ActionErrors();
 		
 		if (this.titre.equals("")) erreurs.add("titre vide", new ActionMessage("erreurs.film.titre_vide"));
 		if (this.annee_sortie <= 0) erreurs.add("année de sortie incorrecte", new ActionMessage("erreurs.film.annee"));
-		
 		return erreurs;
 	}
-	
 	
 }
