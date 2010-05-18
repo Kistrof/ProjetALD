@@ -54,6 +54,7 @@ CREATE TABLE pro (
   pass             varchar(255) NOT NULL, 
   date_inscription timestamp NOT NULL, 
   derniere_visite  timestamp NOT NULL, 
+  admin            tinyint(1),
   PRIMARY KEY (login));
 CREATE TABLE note (
   filmid   int(10) NOT NULL, 
