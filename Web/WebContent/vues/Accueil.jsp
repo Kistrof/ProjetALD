@@ -28,7 +28,7 @@ Bienvenue sur la page d'accueil<br>
  	</html:link>
 </logic:notEmpty>
 <br/>
-	<html:link action="/Rechercher.do">
+	<html:link action="/AfficheFormRecherche.do">
  	    <bean:message key="accueil.lien_rechercher"/>
  	</html:link>
 </body>
