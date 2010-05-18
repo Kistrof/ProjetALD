@@ -82,7 +82,7 @@ public class Personne {
 
 	public String toString()
 	{
-		return "Film[id="+this.id+";nom="+this.nom+";prenom="+this.prenom+"]";
+		return "Personne[id="+this.id+";nom="+this.nom+";prenom="+this.prenom+"]";
 	}
 	
 	public int getId() {
