@@ -25,7 +25,6 @@
 	
 	<bean name="/verifAddOrUpdateFilm" class="struts.action.ActionAjoutFilm">
 		<property name="daoFilmTemp" ref="daoFilmTemp" />
-		<property name="daoFilm" ref="daoFilm" />
 	</bean>
 	
 	<bean name="/VerifLogin" class="struts.action.ActionVerifLogin">
@@ -34,6 +33,11 @@
 	
 	<bean name="/AjoutPro" class="struts.action.ActionAjoutPro">
 		<property name="daoPro" ref="daoPro"/>
+	</bean>
+	
+	<bean name="/Recherche" class="struts.action.ActionRecherche">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne"/>
 	</bean>
 	
 
