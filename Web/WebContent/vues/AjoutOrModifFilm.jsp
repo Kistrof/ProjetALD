@@ -6,10 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Ajout/édition d'un film</title>
 </head>
 <body>
+<logic:empty name="FILM">
 	<h1>Ajouter un film</h1>
+</logic:empty><logic:notEmpty name="FILM">
+	<h1>Proposer des modifications sur le film "<bean:write name="FILM" property="titre" />"</h1>
+</logic:notEmpty>
 	<html:form action="/verifAddOrUpdateFilm.do">
 		<table>
 			<tr>
