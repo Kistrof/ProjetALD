@@ -1,5 +1,6 @@
 package metier;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
 
 public class Pro
@@ -52,7 +53,15 @@ public class Pro
 	}
 
 	public void setPass(String pass) {
-		this.pass = pass;
+		try
+		{
+			java.security.MessageDigest md5 = java.security.MessageDigest.getInstance("MD5");
+			md5.update(pass.getBytes());
+			this.pass = new String(md5.digest());
+		}
+		catch (NoSuchAlgorithmException e)
+		{
+		}
 	}
 
 	public Timestamp getDate_inscription() {

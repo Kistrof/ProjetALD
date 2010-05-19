@@ -65,7 +65,7 @@ public class DAOProHbn extends DAOHibernate implements DAOPro
 	public boolean verifLogin(String pseudo, String mdp) {
 		// TODO Auto-generated method stub
 		Session s=this.connect();
-		org.hibernate.Query q=s.createQuery("select count(*) from Pro as p where p.pseudo='"+pseudo+"' and pass='"+mdp+"'");
+		org.hibernate.Query q=s.createQuery("select count(*) from Pro as p where p.pseudo='"+pseudo+"' and pass=MD5('"+mdp+"')");
 		
 	   if(((Long)q.iterate().next()>0))
 		   return true;
