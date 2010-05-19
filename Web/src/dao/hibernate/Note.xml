@@ -4,7 +4,7 @@
 	<class name="metier.Note" table="note" lazy="false">
 		<composite-id>
 			<key-many-to-one name="votant">
-				<column name="votant" />
+				<column name="prologin" />
 			</key-many-to-one>
 			<key-many-to-one name="film">
 				<column name="filmid"/>
