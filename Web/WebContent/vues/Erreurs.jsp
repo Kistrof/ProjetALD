@@ -8,7 +8,8 @@
 </head>
 <body>
 	<h1>Erreurs rencontrées</h1>
+	<html:errors/><br/>
 	<br/>
-	<html:errors/>
+	<html:link action="/Accueil">Retour à l'accueil</html:link>
 </body>
 </html:html>
