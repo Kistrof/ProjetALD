@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-
+	
 <!-- =========================================== DAO -->
 	
-	 
+	
 	<bean id="daoCeremonie"         class="dao.hibernate.DAOCeremonieHbn" />
 	<bean id="daoFilm"              class="dao.hibernate.DAOFilmHbn" />
 	<bean id="daoFilmTemp"          class="dao.hibernate.DAOFilmTempHbn" />
@@ -19,8 +19,8 @@
 	
 <!-- =========================================== Actions -->
 	
-	<bean name="/AfficheFilm" class="struts.action.ActionAfficheFilm">
-		<property name="daoFilm" ref="daoFilm" /><!-- le nom de l'attribut pour le setter ; l'id correspondant dans la liste ci-dessus -->
+	<bean name="/AfficheFilm" class="struts.action.ActionGetFilm">
+		<property name="daoFilm" ref="daoFilm" />
 	</bean>
 	
 	<bean name="/verifAddOrUpdateFilm" class="struts.action.ActionAjoutFilm">
@@ -40,7 +40,19 @@
 		<property name="daoPersonne" ref="daoPersonne"/>
 	</bean>
 	
-
+	<bean name="/modifFilm" class="struts.action.ActionGetFilm">
+		<property name="daoFilm" ref="daoFilm"/>
+	</bean>
+	
+	<bean name="/noterFilm" class="struts.action.ActionGetFilm">
+		<property name="daoFilm" ref="daoFilm"/>
+	</bean>
+	
+	<bean name="/actionNoterFilm" class="struts.action.ActionNoterFilm">
+		<property name="daoNote" ref="daoNote"/>
+		<property name="daoFilm" ref="daoFilm"/>
+	</bean>
+	
 	
 	
 	

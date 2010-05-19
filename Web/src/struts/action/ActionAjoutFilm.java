@@ -17,20 +17,14 @@ import org.apache.struts.action.ActionMapping;
 
 import struts.actionForm.ActionFormFilm;
 
-import dao.DAOFilm;
 import dao.DAOFilmTemp;
 
 public class ActionAjoutFilm extends Action
 {
 	private DAOFilmTemp daoFilmTemp;
-	private DAOFilm daoFilm;
 
 	public void setDaoFilmTemp(DAOFilmTemp daoFilmTemp) {
 		this.daoFilmTemp = daoFilmTemp;
-	}
-	
-	public void setDaoFilm(DAOFilm daoFilm) {
-		this.daoFilm = daoFilm;
 	}
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response)
@@ -38,8 +32,8 @@ public class ActionAjoutFilm extends Action
 		ActionFormFilm f = (ActionFormFilm)form;
 		HttpSession session = request.getSession();
 		
-		Pro auteur = (Pro)session.getAttribute("pro");
-		Film film = daoFilm.get(f.getCodeOriginal());
+		Pro auteur = (Pro)session.getAttribute("PRO");
+		Film film = (Film)session.getAttribute("FILM");
 		String titre = f.getTitre();
 		String affiche = f.getAffiche();
 		int annee = f.getAnnee_sortie();

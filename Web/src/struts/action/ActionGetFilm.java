@@ -14,24 +14,25 @@ import org.apache.struts.action.ActionMessages;
 
 import dao.DAOFilm;
 
-public class ActionAfficheFilm extends Action
+public class ActionGetFilm extends Action
 {
+	
 	private DAOFilm daoFilm;
 	
 	public void setDaoFilm(DAOFilm daoFilm) {
 		this.daoFilm = daoFilm;
 	}
 
-	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response)
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		try
 		{
 			String id_str = request.getParameter("id");
 			int id = Integer.parseInt(id_str);
-			Film f = daoFilm.get(id);
-			if (f == null) throw new NullPointerException();
-			request.setAttribute("FILM", f);
-			return mapping.findForward("vueAfficheFilm");
+			Film film = daoFilm.get(id);
+			if (film == null) throw new NullPointerException();
+			request.setAttribute("FILM", film);
+			return mapping.findForward("next");
 		}
 		catch (NumberFormatException ex)
 		{
@@ -48,4 +49,5 @@ public class ActionAfficheFilm extends Action
 			return mapping.getInputForward();
 		}
 	}
+
 }
