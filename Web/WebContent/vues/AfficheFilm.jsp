@@ -38,6 +38,6 @@
 	<bean:write name="realisateur" property="prenom" /> <bean:write name="acteur" property="nom" /><br/>
 </logic:iterate>
 	<br/>
-	<html:link action="/noterFilm" paramName="FILM" paramProperty="id" >Noter ce film</html:link>
+	<html:link action="/noterFilm" paramId="id" paramName="FILM" paramProperty="id" >Noter ce film</html:link>
 </body>
 </html>
