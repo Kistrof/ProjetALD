@@ -1,11 +1,9 @@
 package metier;
 
-import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
 
 public class Pro
 {
-	//private int id;
 	private String pseudo;
 	private String pass;
 	private Timestamp date_inscription;
@@ -14,7 +12,6 @@ public class Pro
 	
 	public Pro()
 	{
-		//this.id=-1;
 		this.pseudo = "";
 		this.pass = "";
 		date_inscription = new Timestamp(0);
@@ -23,24 +20,12 @@ public class Pro
 
 	public Pro(String pseudo, String pass, Timestamp dateInscription, Timestamp derniereVisite)
 	{
-		//this.id=-1;
 		this.pseudo = pseudo;
 		this.pass = pass;
 		date_inscription = dateInscription;
 		derniere_visite = derniereVisite;
 	}
 	
-	/*public int getId()
-	{
-		return this.id;
-	}
-	
-	
-	public void setId(int id)
-	{
-		this.id=id;
-	}
-	*/
 	public String getPseudo() {
 		return this.pseudo;
 	}
@@ -54,15 +39,7 @@ public class Pro
 	}
 
 	public void setPass(String pass) {
-		try
-		{
-			java.security.MessageDigest md5 = java.security.MessageDigest.getInstance("MD5");
-			md5.update(pass.getBytes());
-			this.pass = new String(md5.digest());
-		}
-		catch (NoSuchAlgorithmException e)
-		{
-		}
+		this.pass = pass;
 	}
 
 	public Timestamp getDate_inscription() {

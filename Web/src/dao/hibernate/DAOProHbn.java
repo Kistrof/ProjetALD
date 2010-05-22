@@ -19,7 +19,6 @@ public class DAOProHbn extends DAOHibernate implements DAOPro
 	{
 		Session s = this.connect();
 		s.delete(obj);
-		//obj.setId(-1);
 		this.close(s);
 	}
 
@@ -63,14 +62,13 @@ public class DAOProHbn extends DAOHibernate implements DAOPro
 
 	@Override
 	public boolean verifLogin(String pseudo, String mdp) {
-		// TODO Auto-generated method stub
 		Session s=this.connect();
-		org.hibernate.Query q=s.createQuery("select count(*) from Pro as p where p.pseudo='"+pseudo+"' and pass=MD5('"+mdp+"')");
+		org.hibernate.Query q=s.createQuery("select count(*) from Pro as p where p.pseudo='"+pseudo+"' and pass='"+mdp+"'");
 		
 	   if(((Long)q.iterate().next()>0))
 		   return true;
 	   else
-		   return false;	
+		   return false;
 	}
 
 
