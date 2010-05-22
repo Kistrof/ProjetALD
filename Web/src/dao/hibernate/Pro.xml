@@ -6,6 +6,6 @@
 	<property name="pass" type="string" column="pass"/>
 	<property name="date_inscription" type="timestamp" column="date_inscription"/>
 	<property name="derniere_visite" type="timestamp" column="derniere_visite"/>
-	<property name="derniere_visite" type="boolean" column="admin"/>
+	<property name="admin" type="boolean" column="admin"/>
 </class>
 </hibernate-mapping>
