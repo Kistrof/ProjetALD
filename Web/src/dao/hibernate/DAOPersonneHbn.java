@@ -49,7 +49,6 @@ public class DAOPersonneHbn extends DAOHibernate implements DAOPersonne {
 	}
 	@SuppressWarnings("unchecked")
 	public ArrayList<Personne> loadAll(String chaine) {
-		// TODO Auto-generated method stub
 		ArrayList<Personne> tab=null;
 		Session s=this.connect();
 		System.out.println(chaine);

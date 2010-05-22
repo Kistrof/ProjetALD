@@ -46,7 +46,6 @@ public class DAOFilmHbn extends DAOHibernate implements DAOFilm
 	
 	@SuppressWarnings("unchecked")
 	public ArrayList<Film> loadAll(String chaine) {
-		// TODO Auto-generated method stub
 		ArrayList<Film> tab=null;
 		Session s=this.connect();
 		System.out.println(chaine);
