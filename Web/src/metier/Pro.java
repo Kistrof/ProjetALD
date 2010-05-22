@@ -10,6 +10,7 @@ public class Pro
 	private String pass;
 	private Timestamp date_inscription;
 	private Timestamp derniere_visite;
+	private boolean admin;
 	
 	public Pro()
 	{
@@ -80,6 +81,14 @@ public class Pro
 		derniere_visite = derniereVisite;
 	}
 	
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
 	public boolean equals(Object obj)
 	{
 		if (obj instanceof Pro)
