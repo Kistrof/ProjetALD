@@ -48,10 +48,10 @@
 		
 		<action path="/AfficheFormAjoutPro" forward="/vues/FormAjoutPro.jsp"/>
 		
-		<action path="/Accueil" forward="/vues/Accueil.jsp"/>
+		<action path="/Accueil" forward="/vues/AccueilDesign.jsp"/>
 		
 		<action path="/VerifLogin" type="org.springframework.web.struts.DelegatingActionProxy" name="formVerifLogin" scope="request" validate="true" input="/vues/FormConnexion.jsp">
-			<forward name="RetourAccueil" path="/vues/Accueil.jsp"/>
+			<forward name="RetourAccueil" path="/vues/AccueilDesign.jsp"/>
 			<forward name="ErreurLogin" path="/vues/ErreurLogin.jsp"/>
 		</action>
 		
