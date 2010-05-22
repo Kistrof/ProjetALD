@@ -2,11 +2,10 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 <class name="metier.Pro" table="pro" lazy="false">
-	<id name="id" type="integer" column="id"><generator class="native" /></id>
-	<property name="login" type="string" column="login"/>
+	<id name="pseudo" type="string" column="login"/>
 	<property name="pass" type="string" column="pass"/>
-	<property name="date_inscription" type="date" column="date_inscription"/>
-	<property name="derniere_visite" type="date" column="derniere_visite"/>
-	
+	<property name="date_inscription" type="timestamp" column="date_inscription"/>
+	<property name="derniere_visite" type="timestamp" column="derniere_visite"/>
+	<property name="admin" type="boolean" column="admin"/>
 </class>
 </hibernate-mapping>

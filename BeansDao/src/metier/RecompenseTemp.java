@@ -48,6 +48,14 @@ public class RecompenseTemp extends Modification {
 		this.annee = annee;
 	}
 
+	public Recompense getOriginal() {
+		return original;
+	}
+
+	public void setOriginal(Recompense original) {
+		this.original = original;
+	}
+
 	@Override
 	public void appliquer() {
 		if (original == null) original = new Recompense();

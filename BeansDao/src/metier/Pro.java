@@ -1,45 +1,33 @@
 package metier;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Pro
 {
-	private int id;
 	private String pseudo;
 	private String pass;
-	private Date date_inscription;
-	private Date derniere_visite;
+	private Timestamp date_inscription;
+	private Timestamp derniere_visite;
+	private boolean admin;
 	
 	public Pro()
 	{
-		this.id=-1;
 		this.pseudo = "";
 		this.pass = "";
-		date_inscription = new Date();
-		derniere_visite = new Date();
+		date_inscription = new Timestamp(0);
+		derniere_visite = new Timestamp(0);
 	}
 
-	public Pro(int id,String pseudo, String pass, Date dateInscription, Date derniereVisite)
+	public Pro(String pseudo, String pass, Timestamp dateInscription, Timestamp derniereVisite)
 	{
-		this.id=-1;
 		this.pseudo = pseudo;
 		this.pass = pass;
 		date_inscription = dateInscription;
 		derniere_visite = derniereVisite;
 	}
 	
-	public int getId()
-	{
-		return this.id;
-	}
-	
-	public void setId(int id)
-	{
-		this.id=id;
-	}
-	
 	public String getPseudo() {
-		return pseudo;
+		return this.pseudo;
 	}
 
 	public void setPseudo(String pseudo) {
@@ -54,22 +42,30 @@ public class Pro
 		this.pass = pass;
 	}
 
-	public Date getDate_inscription() {
+	public Timestamp getDate_inscription() {
 		return date_inscription;
 	}
 
-	public void setDate_inscription(Date dateInscription) {
+	public void setDate_inscription(Timestamp dateInscription) {
 		date_inscription = dateInscription;
 	}
 
-	public Date getDerniere_visite() {
+	public Timestamp getDerniere_visite() {
 		return derniere_visite;
 	}
 
-	public void setDerniere_visite(Date derniereVisite) {
+	public void setDerniere_visite(Timestamp derniereVisite) {
 		derniere_visite = derniereVisite;
 	}
 	
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
 	public boolean equals(Object obj)
 	{
 		if (obj instanceof Pro)

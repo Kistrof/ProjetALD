@@ -118,5 +118,9 @@ public class ModifRelationFilmPers extends Modification
 	public Film getOriginal() {
 		return original;
 	}
+
+	public void setOriginal(Film original) {
+		this.original = original;
+	}
 	
 }

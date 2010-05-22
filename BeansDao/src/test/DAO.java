@@ -18,7 +18,7 @@ public class DAO
 		Personne clintEastwood = new Personne(-1, "Eastwood", "Clint", new Date(1930, 5, 31), null, null, -1);
 		daoPersonne.save(clintEastwood);
 		
-		Film granTorino = new Film(-1, "Gran Torino", 2008, -1, null, "", null, -1, null, null, null, null);
+		Film granTorino = new Film(-1, "Gran Torino", 2008, -1, null, "", null, -1);
 		granTorino.addActeur(clintEastwood);
 		granTorino.addProducteur(clintEastwood);
 		daoFilm.save(granTorino);

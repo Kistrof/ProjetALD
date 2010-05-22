@@ -43,6 +43,15 @@ public class DAOFilmHbn extends DAOHibernate implements DAOFilm
 		this.close(s);
 		return tab;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public ArrayList<Film> loadAll(String chaine) {
+		ArrayList<Film> tab=null;
+		Session s=this.connect();
+		System.out.println(chaine);
+		tab=(ArrayList<Film>)s.createQuery("FROM Film where titre LIKE'%"+chaine+"%'").list();
+		return tab;
+	}
 
 	@Override
 	public void save(Film obj)
@@ -69,5 +78,6 @@ public class DAOFilmHbn extends DAOHibernate implements DAOFilm
 			this.close(s);
 		}
 	}
+
 
 }

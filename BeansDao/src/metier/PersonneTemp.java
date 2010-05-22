@@ -106,6 +106,14 @@ public class PersonneTemp extends Modification {
 		suppr_recompense = supprRecompense;
 	}
 
+	public Personne getOriginal() {
+		return original;
+	}
+
+	public void setOriginal(Personne original) {
+		this.original = original;
+	}
+
 	/* (non-Javadoc)
 	 * @see metier.Modification#appliquer()
 	 */

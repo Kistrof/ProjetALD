@@ -6,9 +6,10 @@ import metier.Pro;
 
 public interface DAOPro
 {
-	public Pro get(int id);
+	public Pro get(String pseudo);
 	public ArrayList<Pro> loadAll();
 	public void save(Pro p);
 	public void delete(Pro p);
 	public void update(Pro p);
+	public boolean verifLogin(String pseuo,String mdp);
 }

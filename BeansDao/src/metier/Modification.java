@@ -61,4 +61,16 @@ public abstract class Modification
 	{
 		return "Modification[auteur="+this.auteur+";soumission="+this.soumission;
 	}
+
+	public Date getSoumission() {
+		return soumission;
+	}
+
+	public void setSoumission(Date soumission) {
+		this.soumission = soumission;
+	}
+
+	public void setAuteur(Pro auteur) {
+		this.auteur = auteur;
+	}
 }

@@ -9,21 +9,21 @@
 		<property name="photo"		type="string"	column="photo" />
 		<property name="date_maj"	type="date"	column="date_maj" />
 		<property name="popularite"		type="int"		column="popularite" />
-		<set name="filmographie" table="filmographie" lazy="false">
+		<bag name="filmographie" table="acteurs" lazy="false">
 			<key column="personneid" />
 			<many-to-many column="filmid" class="metier.Film" />
-		</set>
-		<set name="realisations" table="realisations" lazy="false">
+		</bag>
+		<bag name="realisations" table="realisateurs" lazy="false">
 			<key column="personneid" />
 			<many-to-many column="filmid" class="metier.Film" />
-		</set>
-		<set name="productions" table="production" lazy="false">
+		</bag>
+		<bag name="productions" table="producteurs" lazy="false">
 			<key column="personneid" />
 			<many-to-many column="filmid" class="metier.Film" />
-		</set>
-		<set name="recompenses" lazy="false" cascade="all">
+		</bag>
+		<bag name="recompenses" lazy="false" cascade="all">
 			<key column="personneid" />
 			<one-to-many class="metier.Recompense" />
-		</set>
+		</bag>
 	</class>
 </hibernate-mapping>
