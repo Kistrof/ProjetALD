@@ -2,7 +2,10 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -14,7 +17,7 @@ public class Menus extends JMenuBar
 	private JMenu menu_file, menu_bdd, menu_fenetres, menu_aide;
 	private JMenuItem file_quitter;
 	private JMenuItem bdd_import, bdd_export, bdd_reset;
-	private JMenuItem fen_pros, fen_nav, fen_updates;
+	private JCheckBoxMenuItem fen_pros, fen_nav, fen_updates;
 	private JMenuItem aide_propos, aide_aide;
 	
 	public Menus()
@@ -59,27 +62,27 @@ public class Menus extends JMenuBar
 		
 		this.menu_fenetres = new JMenu("Fenêtres");
 		
-		this.fen_pros = new JMenuItem("Membres pro");
+		this.fen_pros = new JCheckBoxMenuItem("Membres pro");
 		this.menu_fenetres.add(this.fen_pros);
-		this.fen_pros.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				pros();
+		this.fen_pros.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				Principale.getInstance().toggleFrame(0);
 			}
 		});
 		
-		this.fen_nav = new JMenuItem("Navigation");
+		this.fen_nav = new JCheckBoxMenuItem("Navigation");
 		this.menu_fenetres.add(this.fen_nav);
-		this.fen_nav.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				navigation();
+		this.fen_nav.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				Principale.getInstance().toggleFrame(1);
 			}
 		});
 		
-		this.fen_updates = new JMenuItem("Mises à jour");
+		this.fen_updates = new JCheckBoxMenuItem("Mises à jour");
 		this.menu_fenetres.add(this.fen_updates);
-		this.fen_updates.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				updates();
+		this.fen_updates.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				Principale.getInstance().toggleFrame(2);
 			}
 		});
 		
@@ -108,42 +111,27 @@ public class Menus extends JMenuBar
 	}
 
 	protected void propos() {
-		// TODO Auto-generated method stub
+		// TODO Ouvrir une boite d'info "A propos ..."
 		
 	}
 
 	protected void aide() {
-		// TODO Auto-generated method stub
+		// TODO Ouvrir une boite d'info "Aide"
 		
 	}
-
-	protected void updates() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	protected void navigation() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	protected void pros() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	protected void reset() {
-		// TODO Auto-generated method stub
+		// TODO Demander confirmation pour réinitialiser la BDD
 		
 	}
 
 	protected void exporter() {
-		// TODO Auto-generated method stub
+		// TODO JFileChooser pour exporter la BDD
 		
 	}
 
 	protected void importer() {
-		// TODO Auto-generated method stub
+		// TODO JFileChooser pour importer une BDD
 		
 	}
 }
