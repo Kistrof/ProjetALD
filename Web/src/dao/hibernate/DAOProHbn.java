@@ -1,5 +1,6 @@
 package dao.hibernate;
 
+import java.util.Calendar;
 import java.util.ArrayList;
 
 import org.hibernate.Session;
@@ -70,7 +71,36 @@ public class DAOProHbn extends DAOHibernate implements DAOPro
 	   else
 		   return false;
 	}
-
-
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public ArrayList<Pro> loadDateInscription(int year, int month)
+	{
+		ArrayList<Pro> tab = null;
+		Session s = this.connect();
+		tab = (ArrayList<Pro>) s.createQuery("FROM Pro WHERE date_inscription LIKE '"+year+"-"+month+"-%'").list();
+		this.close(s);
+		return tab;
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public ArrayList<Pro> loadInactifs()
+	{
+		ArrayList<Pro> tab = null;
+		Calendar c = Calendar.getInstance();
+		c.set(Calendar.MONTH, c.get(Calendar.MONTH)-1);
+		String time = this.CalendatToTime(c);
+		Session s = this.connect();
+		tab = (ArrayList<Pro>) s.createQuery("FROM Pro WHERE derniere_visite < '"+time+"'").list();
+		this.close(s);
+		return tab;
+	}
+	
+	private String CalendatToTime(Calendar c)
+	{
+		return c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DAY_OF_MONTH)+" "+
+		c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND);
+	}
 
 }

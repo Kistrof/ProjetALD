@@ -12,4 +12,6 @@ public interface DAOPro
 	public void delete(Pro p);
 	public void update(Pro p);
 	public boolean verifLogin(String pseuo,String mdp);
+	public ArrayList<Pro> loadDateInscription(int year, int month);
+	public ArrayList<Pro> loadInactifs();
 }
