@@ -33,12 +33,12 @@ public class ActionAjoutPersonne extends Action {
 		HttpSession session = request.getSession();
 		
 		Pro auteur = (Pro)session.getAttribute("PRO");
-		Personne Personne = (Personne)session.getAttribute("PERSONNE");
+		Personne personne = (Personne)session.getAttribute("PERSONNE");
 		String nom = p.getNom();
 		String prenom = p.getPrenom();
 		Date naissance = p.getNaissance();
 		String photo = p.getPhoto();
-		PersonneTemp tmp = new PersonneTemp(-1, Personne, nom, prenom, naissance, photo, null, auteur, new Date() );
+		PersonneTemp tmp = new PersonneTemp(-1, personne, nom, prenom, naissance, photo, null, auteur, new Date() );
 		daoPersonneTemp.save(tmp);
 		
 		return mapping.findForward("AjoutPersonneOK");
