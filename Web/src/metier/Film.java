@@ -78,7 +78,7 @@ public class Film
 	
 	public String toString()
 	{
-		return "Film[id="+this.id+";titre"+this.titre+"]";
+		return "Film[id="+this.id+";titre="+this.titre+"]";
 	}
 	
 	/**
