@@ -37,14 +37,14 @@ public class ActionGetFilm extends Action
 		catch (NumberFormatException ex)
 		{
 			ActionMessages erreurs = this.getErrors(request);
-			erreurs.add("Personne introuvable", new ActionMessage("erreurs.film.code_incorrect"));
+			erreurs.add("Film introuvable", new ActionMessage("erreurs.film.code_incorrect"));
 			this.addErrors(request, erreurs);
 			return mapping.getInputForward();
 		}
 		catch (NullPointerException ex)
 		{
 			ActionMessages erreurs = this.getErrors(request);
-			erreurs.add("Personne introuvable", new ActionMessage("erreurs.film.not_found"));
+			erreurs.add("Film introuvable", new ActionMessage("erreurs.film.not_found"));
 			this.addErrors(request, erreurs);
 			return mapping.getInputForward();
 		}

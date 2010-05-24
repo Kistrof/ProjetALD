@@ -12,6 +12,7 @@
 		<form-bean name="formAjoutPro"         type="struts.actionForm.ActionFormAjoutPro"/>
 		<form-bean name="formRecherche" 	   type="struts.actionForm.ActionFormRecherche"/>
 		<form-bean name="formActionNoterFilm"  type="struts.actionForm.ActionFormNoterFilm" />
+		<form-bean name="formActionPersonne"   type="struts.actionForm.ActionFormPersonne" />
 		
 		
 		
@@ -81,6 +82,17 @@
 			<forward name="AfficheFilm" path="/AfficheFilm.do" />
 		</action>
 		
+		<action path="/modifPersonne" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/AjoutOrModifPersonne.jsp" />
+		</action>
+		
+		<action path="/verifAddOrUpdatePersonne" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
+			<forward name="AjoutPersonneOK" path="/vues/Accueil.jsp" />
+		</action>
+		
+		<action path="/AffichePersonne" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/AffichePersonne.jsp" />
+		</action>
 		
 		
 		
