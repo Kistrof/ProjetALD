@@ -33,6 +33,7 @@ public class ActionAjoutPersonne extends Action {
 		HttpSession session = request.getSession();
 		
 		Pro auteur = (Pro)session.getAttribute("PRO");
+
 		Personne personne = (Personne)session.getAttribute("PERSONNE");
 		String nom = p.getNom();
 		String prenom = p.getPrenom();

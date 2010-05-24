@@ -57,7 +57,11 @@
 		<property name="daoPersonne" ref="daoPersonne" />
 	</bean>
 	
-	<bean name="/affichePersonne" class="struts.action.ActionGetPersonne">
+	<bean name="/verifAddOrUpdatePersonne" class="struts.action.ActionAjoutPersonne">
+		<property name="daoPersonneTemp" ref="daoPersonneTemp" />
+	</bean>
+	
+	<bean name="/AffichePersonne" class="struts.action.ActionGetPersonne">
 		<property name="daoPersonne" ref="daoPersonne" />
 	</bean>
 	

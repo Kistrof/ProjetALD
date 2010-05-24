@@ -29,9 +29,9 @@ CREATE TABLE `film_temp` (
   `cout` double NOT NULL DEFAULT '0',
   `affiche` varchar(255) DEFAULT NULL,
   `description` text,
-  `suppr_recompense` int(10) NOT NULL DEFAULT '0',
+  `suppr_recompense` int(10) DEFAULT '0',
   `soumission` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `filmid` int(10) NOT NULL DEFAULT '0',
+  `filmid` int(10) DEFAULT '0',
   `prologin` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -60,9 +60,9 @@ CREATE TABLE `personne_temp` (
   `prenom` varchar(255) DEFAULT NULL,
   `naissance` date DEFAULT NULL,
   `photo` varchar(255) DEFAULT NULL,
-  `suppr_recompense` int(10) NOT NULL DEFAULT '0',
+  `suppr_recompense` int(10) DEFAULT '0',
   `soumission` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `personneid` int(10) NOT NULL DEFAULT '0',
+  `personneid` int(10) DEFAULT '0',
   `prologin` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -112,7 +112,7 @@ CREATE TABLE `recompense_temp` (
   `prixid` int(10) NOT NULL DEFAULT '0',
   `personneid` int(10) NOT NULL DEFAULT '0',
   `filmid` int(10) NOT NULL DEFAULT '0',
-  `recompenseid` int(10) NOT NULL DEFAULT '0',
+  `recompenseid` int(10) DEFAULT '0',
   `prologin` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
