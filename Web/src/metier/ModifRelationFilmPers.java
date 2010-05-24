@@ -33,6 +33,11 @@ public class ModifRelationFilmPers extends Modification
 		ajout_acteur = ajoutActeur;
 		this.original = original;
 	}
+	
+	public ModifRelationFilmPers()
+	{
+		super(-1, null, null);
+	}
 
 	/**
 	 * Applique la demande de modification
