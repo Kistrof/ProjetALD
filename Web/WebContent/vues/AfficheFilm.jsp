@@ -27,17 +27,22 @@
 <logic:iterate id="acteur" name="FILM" property="acteurs">
 	<bean:write name="acteur" property="prenom" /> <bean:write name="acteur" property="nom" /><br/>
 </logic:iterate>
+	<html:link action="/ajouterActeur" paramId="id" paramName="FILM" paramProperty="id" >Ajouter un acteur</html:link>
 	<br/>
 	Producteurs :<br/>
 <logic:iterate id="producteur" name="FILM" property="producteurs">
 	<bean:write name="producteur" property="prenom" /> <bean:write name="acteur" property="nom" /><br/>
 </logic:iterate>
+	<html:link action="/ajouterProducteur" paramId="id" paramName="FILM" paramProperty="id" >Ajouter un producteur</html:link>
 	<br/>
 	Réalisateurs :<br/>
 <logic:iterate id="realisateur" name="FILM" property="realisateurs">
 	<bean:write name="realisateur" property="prenom" /> <bean:write name="acteur" property="nom" /><br/>
 </logic:iterate>
+	<html:link action="/ajouterRealisateur" paramId="id" paramName="FILM" paramProperty="id" >Ajouter un réalisateur</html:link>
 	<br/>
 	<html:link action="/noterFilm" paramId="id" paramName="FILM" paramProperty="id" >Noter ce film</html:link>
+	<br/>
+	<html:link action="/modifFilm" paramId="id" paramName="FILM" paramProperty="id" >Proposer des modifications</html:link>
 </body>
 </html>
