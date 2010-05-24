@@ -86,7 +86,7 @@
 			<forward name="next" path="/vues/AjoutOrModifPersonne.jsp" />
 		</action>
 		
-		<action path="/verifAddOrUpdatePersonne" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
+		<action path="/verifAddOrUpdatePersonne" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionPersonne" scope="request" validate="true" input="/vues/Erreurs.jsp">
 			<forward name="AjoutPersonneOK" path="/vues/Accueil.jsp" />
 		</action>
 		

@@ -10,7 +10,7 @@
 <title>Fiche Personne</title>
 </head>
 <body>
-	<h1><u></u><bean:write name="PERSONNE" property="prenom" /> <bean:write name="PERSONNE" property="nom" /></u></h1>
+	<h1><u><bean:write name="PERSONNE" property="prenom" /> <bean:write name="PERSONNE" property="nom" /></u></h1>
 	Popularité : <bean:write name="PERSONNE" property="popularite" /><br/>
 	Né le : <bean:write name="PERSONNE" property="naissance" /><br/>
 	Lien vers la photo : <bean:write name="PERSONNE" property="photo" /><br/>
