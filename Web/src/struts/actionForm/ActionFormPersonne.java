@@ -1,5 +1,9 @@
 package struts.actionForm;
 
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
@@ -36,8 +40,8 @@ private static final long serialVersionUID = 1L;
 	public Date getNaissance() {
 		return naissance;
 	}
-	public void setNaissance(String naissance) {
-		naissance = new Date(naissance);
+	public void setNaissance(String n) {
+		this.naissance = new Date(n);
 	}
 	public String getPhoto() {
 		return photo;
