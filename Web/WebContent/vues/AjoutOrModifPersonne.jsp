@@ -21,45 +21,25 @@
 			<tr>
 				<td>Prenom : </td>
 				<td>
-					<logic:empty name="PERSONNE">
 						<html:text property="prenom" />
-					</logic:empty>
-					<logic:notEmpty name="PERSONNE">
-						<html:text name="PERSONNE" property="prenom" />
-					</logic:notEmpty>
 				</td>
 			</tr>
 			<tr>
 				<td>Nom : </td>
 				<td>
-					<logic:empty name="PERSONNE">
 						<html:text property="nom" />
-					</logic:empty>
-					<logic:notEmpty name="PERSONNE">
-						<html:text name="PERSONNE" property="nom" />
-					</logic:notEmpty>
 				</td>
 			</tr>
 			<tr>
 				<td>Date de naissance : </td>
 				<td>
-					<logic:empty name="PERSONNE">
 						<html:text property="naissance" />
-					</logic:empty>
-					<logic:notEmpty name="PERSONNE">
-						<html:text name="PERSONNE" property="naissance" />
-					</logic:notEmpty>
 				</td>
 			</tr>
 			<tr>
 				<td>Lien vers la photo : </td>
 				<td>
-					<logic:empty name="PERSONNE">
 						<html:text property="photo" />
-					</logic:empty>
-					<logic:notEmpty name="PERSONNE">
-						<html:text name="PERSONNE" property="photo" />
-					</logic:notEmpty>
 				</td>
 			</tr>
 		</table>
