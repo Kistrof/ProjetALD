@@ -83,6 +83,24 @@
 		<property name="daoFilm" ref="daoFilm"/>
 	</bean>
 	
+	<bean name="/supprActeur" class="struts.action.ActionSupprActeur">
+		<property name="daoFilm" ref="daoFilm" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoModif" ref="daoModifRelFilmPers" />
+	</bean>
+	
+	<bean name="/supprProducteur" class="struts.action.ActionSupprProducteur">
+		<property name="daoFilm" ref="daoFilm" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoModif" ref="daoModifRelFilmPers" />
+	</bean>
+	
+	<bean name="/supprRealisateur" class="struts.action.ActionSupprRealisateur">
+		<property name="daoFilm" ref="daoFilm" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoModif" ref="daoModifRelFilmPers" />
+	</bean>
+	
 	
 	
 	
