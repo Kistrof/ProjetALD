@@ -4,7 +4,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+
+<%@page import="metier.Personne"%><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Fiche Film</title>
@@ -23,26 +24,24 @@
 	<bean:write name="recompense" property="prix" /><br/>
 </logic:iterate>
 	<br/>
-	Casting :<br/>
+	<b>Casting :</b><br/>
 <logic:iterate id="acteur" name="FILM" property="acteurs">
 	<bean:write name="acteur" property="prenom" /> <bean:write name="acteur" property="nom" /><br/>
 </logic:iterate>
 	<html:link action="/ajouterActeur" paramId="id" paramName="FILM" paramProperty="id" >Ajouter un acteur</html:link>
-	<br/>
-	Producteurs :<br/>
+	<br/><br/>
+	<b>Producteurs :</b><br/>
 <logic:iterate id="producteur" name="FILM" property="producteurs">
 	<bean:write name="producteur" property="prenom" /> <bean:write name="acteur" property="nom" /><br/>
 </logic:iterate>
 	<html:link action="/ajouterProducteur" paramId="id" paramName="FILM" paramProperty="id" >Ajouter un producteur</html:link>
-	<br/>
-	Réalisateurs :<br/>
+	<br/><br/>
+	<b>Réalisateurs :</b><br/>
 <logic:iterate id="realisateur" name="FILM" property="realisateurs">
 	<bean:write name="realisateur" property="prenom" /> <bean:write name="acteur" property="nom" /><br/>
 </logic:iterate>
-	<html:link action="/ajouterRealisateur" paramId="id" paramName="FILM" paramProperty="id" >Ajouter un réalisateur</html:link>
+	<html:link action="/ajouterRealisateur" paramId="id" paramName="FILM" paramProperty="id" >Ajouter un réalisateur</html:link><br/>
 	<br/>
-	<html:link action="/noterFilm" paramId="id" paramName="FILM" paramProperty="id" >Noter ce film</html:link>
-	<br/>
-	<html:link action="/modifFilm" paramId="id" paramName="FILM" paramProperty="id" >Proposer des modifications</html:link>
+	<html:link action="/noterFilm" paramId="id" paramName="FILM" paramProperty="id" >Noter ce film</html:link> ou <html:link action="/modifFilm" paramId="id" paramName="FILM" paramProperty="id" >Proposer des modifications</html:link>
 </body>
 </html>
