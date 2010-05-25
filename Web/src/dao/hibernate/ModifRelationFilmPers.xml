@@ -5,7 +5,7 @@
 		<id name="id" type="integer" column="id"><generator class="native" /></id>
 		<many-to-one name="original"					column="filmid" />
 		<many-to-one name="auteur"						column="prologin" />
-		<property	name="soumission"	type="timstamp"	column="soumission" />
+		<property	name="soumission"	type="timestamp"	column="soumission" />
 		<many-to-one name="ajout_producteur"			column="ajout_producteur" />
 		<many-to-one name="suppr_producteur"			column="suppr_producteur" />
 		<many-to-one name="ajout_realisateur"			column="ajout_realisateur" />
