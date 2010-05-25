@@ -41,11 +41,10 @@ public class ActionAjoutPersonne extends Action {
 		{
 			ActionFormPersonne p = (ActionFormPersonne)form;
 			HttpSession session = request.getSession();
-			
 			Pro auteur = (Pro)session.getAttribute("PRO");
 			if (auteur == null) throw new IllegalArgumentException();
 	
-			Personne original = daoPersonne.get(p.getCodeOriginal());
+			Personne original = daoPersonne.get(p.getId());
 			String nom = p.getNom();
 			String prenom = p.getPrenom();
 			Date naissance = p.getNaissance();

@@ -120,6 +120,8 @@ public class PersonneTemp extends Modification {
 	 * @see metier.Modification#appliquer()
 	 */
 	public void appliquer() {
+		if (original == null) original = new Personne();
+		
 		if(this.nom != null)
 			original.setNom(this.nom);
 		
