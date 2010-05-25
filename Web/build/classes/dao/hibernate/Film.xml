@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.Film" table="film" lazy="false">
+		<id name="id" type="integer" column="id"><generator class="native" /></id>
+		<property name="titre"			type="string"	column="titre" />
+		<property name="annee_sortie"	type="int"		column="annee" />
+		<property name="cout"			type="double"	column="cout" />
+		<property name="affiche"		type="string"	column="affiche" />
+		<property name="description"	type="string"	column="description" />
+		<property name="date_maj"		type="timestamp"	column="date_maj" />
+		<property name="note_moyenne"	type="double"	column="note_moyenne" />
+		<bag name="producteurs" table="producteurs" lazy="false">
+			<key column="filmid" />
+			<many-to-many column="personneid" class="metier.Personne" />
+		</bag>
+		<bag name="realisateurs" table="realisateurs" lazy="false">
+			<key column="filmid" />
+			<many-to-many column="personneid" class="metier.Personne" />
+		</bag>
+		<bag name="acteurs" table="acteurs" lazy="false">
+			<key column="filmid" />
+			<many-to-many column="personneid" class="metier.Personne" />
+		</bag>
+		<bag name="recompenses" lazy="false" cascade="all">
+			<key column="filmid" />
+			<one-to-many class="metier.Recompense" />
+		</bag>
+	</class>
+</hibernate-mapping>

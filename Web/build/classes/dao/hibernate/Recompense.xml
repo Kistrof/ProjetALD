@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.Recompense" table="recompense" lazy="false">
+		<id name="id" type="integer" column="id"><generator class="native" /></id>
+		<property name="annee" type="integer" column="annee"/>
+		<property name="date_maj" type="timestamp" column="date_maj"/>
+		<many-to-one name="prix" column="prixid" />
+		
+	</class>
+</hibernate-mapping>
