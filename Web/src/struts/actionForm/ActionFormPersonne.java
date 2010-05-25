@@ -4,9 +4,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import metier.Pro;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -70,11 +67,6 @@ private static final long serialVersionUID = 1L;
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request)
 	{
 		ActionErrors erreurs = new ActionErrors();
-		
-		HttpSession session = request.getSession();
-		
-		Pro auteur = (Pro)session.getAttribute("PRO");
-		if(auteur != null) erreurs.add("Pas de session pro", new ActionMessage("erreurs.personne.pas_pro"));
 		
 		if (this.nom.equals("")) erreurs.add("nom vide", new ActionMessage("erreurs.personne.nom_vide"));
 		if (this.prenom.equals("")) erreurs.add("prenom vide", new ActionMessage("erreurs.personne.prenom_vide"));
