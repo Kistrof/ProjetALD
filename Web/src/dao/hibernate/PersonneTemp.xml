@@ -5,7 +5,7 @@
 		<id name="id" type="integer" column="id"><generator class="native" /></id>
 		<many-to-one name="original"					column="personneid" />
 		<many-to-one name="auteur"						column="prologin" />
-		<property	name="soumission"	type="date"		column="soumission" />
+		<property	name="soumission"	type="timestamp"		column="soumission" />
 		<property	name="nom"			type="string"	column="nom" />
 		<property	name="prenom"		type="string"	column="prenom" />
 		<property	name="naissance"	type="date"		column="naissance" />

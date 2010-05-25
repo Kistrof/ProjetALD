@@ -10,18 +10,18 @@ public class ActionFormFilm extends ActionForm
 {
 	private static final long serialVersionUID = 1L;
 	
-	private int codeOriginal = -1;
+	private int id = -1;
 	private String titre = "";
 	private int annee_sortie = -1;
 	private double cout = -1;
 	private String affiche = "";
 	private String description = "";
 	
-	public int getCodeOriginal() {
-		return codeOriginal;
+	public int getId() {
+		return id;
 	}
-	public void setCodeOriginal(int codeOriginal) {
-		this.codeOriginal = codeOriginal;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getTitre() {
 		return titre;

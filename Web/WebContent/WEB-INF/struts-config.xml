@@ -110,6 +110,20 @@
 			<forward name="AfficheFilm" path="/AfficheFilm.do" />
 		</action>
 		
+		<action path="/AjouterFilm" forward="/vues/AjoutOrModifFilm.jsp" />
+		
+		<action path="/supprActeur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/afficheFilm.do" />
+		</action>
+		
+		<action path="/supprProducteur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/afficheFilm.do" />
+		</action>
+		
+		<action path="/supprRealisateur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/afficheFilm.do" />
+		</action>
+		
 		
 		
 	</action-mappings>
