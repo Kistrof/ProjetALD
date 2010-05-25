@@ -110,6 +110,8 @@
 			<forward name="AfficheFilm" path="/AfficheFilm.do" />
 		</action>
 		
+		<action path="/AjouterFilm" forward="/vues/AjoutOrModifFilm.jsp" />
+		
 		
 		
 	</action-mappings>

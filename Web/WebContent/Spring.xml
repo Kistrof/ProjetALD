@@ -25,6 +25,7 @@
 	
 	<bean name="/verifAddOrUpdateFilm" class="struts.action.ActionAjoutFilm">
 		<property name="daoFilmTemp" ref="daoFilmTemp" />
+		<property name="daoFilm" ref="daoFilm" />
 	</bean>
 	
 	<bean name="/VerifLogin" class="struts.action.ActionVerifLogin">
