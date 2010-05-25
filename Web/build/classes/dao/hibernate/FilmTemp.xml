@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.FilmTemp" table="film_temp" lazy="false">
+		<id name="id" type="integer" column="id"><generator class="native" /></id>
+		<many-to-one name="original"					column="filmid" />
+		<many-to-one name="auteur"						column="prologin" />
+		<property	name="soumission"	type="date"		column="soumission" />
+		<property	name="titre"		type="string"	column="titre" />
+		<property	name="annee_sortie"	type="int"		column="annee" />
+		<property	name="cout"			type="double"	column="cout" />
+		<property	name="affiche"		type="string"	column="affiche" />
+		<property	name="description"	type="string"	column="description" />
+		<many-to-one name="suppr_recompense"			column="suppr_recompense" />
+	</class>
+</hibernate-mapping>
