@@ -66,7 +66,12 @@ public class ActionAjouterPersonneToFilm extends Action
 		daoModifRelFilmPers.save(modif);
 		
 		request.setAttribute("id", film.getId());
-		return mapping.findForward("AfficheFilm");
+		boolean fromFilm = f.getFromFilm();
+		if (fromFilm) {
+			return mapping.findForward("AfficheFilm");
+		} else {
+			return mapping.findForward("AfficheFilm");
+		}		
 	}
 
 }

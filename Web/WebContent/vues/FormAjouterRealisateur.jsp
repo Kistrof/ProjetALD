@@ -13,6 +13,7 @@
 Ajouter un réalisateur au film <bean:write name="FILM" property="titre" />
 <html:form action="/actionAjouterPersonneToFilm.do" >
 	<html:hidden property="id" name="FILM" />
+	<html:hidden property="FromFilm" value="true" />
 	<html:select property="codeRealisateur">
 		<html:options collection="PERSONNES" labelProperty="nomComplet" property="id" />
 	</html:select>

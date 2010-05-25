@@ -106,6 +106,21 @@
 		<property name="daoModif" ref="daoModifRelFilmPers" />
 	</bean>
 	
+	<bean name="/ajouterFilmographie" class="struts.action.ActionLoadFilmPersonne">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
+	
+	<bean name="/ajouterProduction" class="struts.action.ActionLoadFilmPersonne">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
+	
+	<bean name="/ajouterRealisation" class="struts.action.ActionLoadFilmPersonne">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
+	
 	
 	
 	
