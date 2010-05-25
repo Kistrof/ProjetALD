@@ -1,8 +1,12 @@
 package struts.actionForm;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import metier.Pro;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -40,8 +44,21 @@ private static final long serialVersionUID = 1L;
 	public Date getNaissance() {
 		return naissance;
 	}
+	
 	public void setNaissance(String n) {
-		this.naissance = new Date(n);
+		if(!n.trim().equals(""))
+		{
+			n = n.trim();
+			Calendar c = Calendar.getInstance();
+			n = n.trim();
+			int j = Integer.parseInt(n.substring(0, 2));
+			int m = Integer.parseInt(n.substring(3, 5));
+			int a = Integer.parseInt(n.substring(6));
+			c.set(a, m, j);
+			Date dte = new Date();
+			dte = c.getTime();
+			this.naissance = dte;
+		}
 	}
 	public String getPhoto() {
 		return photo;
@@ -54,9 +71,14 @@ private static final long serialVersionUID = 1L;
 	{
 		ActionErrors erreurs = new ActionErrors();
 		
+		HttpSession session = request.getSession();
+		
+		Pro auteur = (Pro)session.getAttribute("PRO");
+		if(auteur != null) erreurs.add("Pas de session pro", new ActionMessage("erreurs.personne.pas_pro"));
+		
 		if (this.nom.equals("")) erreurs.add("nom vide", new ActionMessage("erreurs.personne.nom_vide"));
 		if (this.prenom.equals("")) erreurs.add("prenom vide", new ActionMessage("erreurs.personne.prenom_vide"));
-		if (this.naissance.equals(null)) erreurs.add("naissance vide", new ActionMessage("erreurs.personne.naissance_null"));
+		//if (this.naissance == null) erreurs.add("naissance vide", new ActionMessage("erreurs.personne.naissance_null"));
 		return erreurs;
 	}
 	

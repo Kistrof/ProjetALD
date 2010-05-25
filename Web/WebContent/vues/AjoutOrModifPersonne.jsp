@@ -11,7 +11,7 @@
 </head>
 <body>
 <logic:empty name="PERSONNE">
-	<h1>Ajouter un film</h1>
+	<h1>Ajouter une personne</h1>
 </logic:empty>
 <logic:notEmpty name="PERSONNE">
 	<h1>Proposer des modifications sur la Personne "<bean:write name="PERSONNE" property="prenom" /> <bean:write name="PERSONNE" property="nom" />"</h1>
