@@ -14,10 +14,11 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import config.Config;
+
 import metier.Pro;
 
 import dao.DAOPro;
-import dao.hibernate.DAOProHbn;
 
 public class Connexion extends JFrame implements ActionListener
 {
@@ -77,7 +78,7 @@ public class Connexion extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		DAOPro daoPro = new DAOProHbn();
+		DAOPro daoPro = Config.beanFactory.getBean("daoPro", DAOPro.class);
 		if (daoPro.verifLogin(this.t_login.getText(), new String(this.t_pass.getPassword())))
 		{
 			Pro p = daoPro.get(this.t_login.getText());
