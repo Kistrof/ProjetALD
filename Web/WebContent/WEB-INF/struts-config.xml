@@ -112,6 +112,8 @@
 		
 		<action path="/AjouterFilm" forward="/vues/AjoutOrModifFilm.jsp" />
 		
+		<action path="/AjouterPersonne" forward="/vues/AjoutOrModifPersonne.jsp" />
+		
 		<action path="/supprActeur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
 			<forward name="next" path="/afficheFilm.do" />
 		</action>

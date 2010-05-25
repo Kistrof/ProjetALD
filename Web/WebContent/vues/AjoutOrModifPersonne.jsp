@@ -15,31 +15,32 @@
 </logic:empty>
 <logic:notEmpty name="PERSONNE">
 	<h1>Proposer des modifications sur la Personne "<bean:write name="PERSONNE" property="prenom" /> <bean:write name="PERSONNE" property="nom" />"</h1>
+	<html:hidden property="id" name="PERSONNE" />
 </logic:notEmpty>
 	<html:form action="/verifAddOrUpdatePersonne.do">
 		<table>
 			<tr>
 				<td>Prenom : </td>
 				<td>
-						<html:text property="prenom" />
+						<html:text property="prenom"  name="PERSONNE" />
 				</td>
 			</tr>
 			<tr>
 				<td>Nom : </td>
 				<td>
-						<html:text property="nom" />
+						<html:text property="nom" name="PERSONNE" />
 				</td>
 			</tr>
 			<tr>
 				<td>Date de naissance : </td>
 				<td>
-						<html:text property="naissance" />
+						<html:text property="naissance" name="PERSONNE" />
 				</td>
 			</tr>
 			<tr>
 				<td>Lien vers la photo : </td>
 				<td>
-						<html:text property="photo" />
+						<html:text property="photo" name="PERSONNE" />
 				</td>
 			</tr>
 		</table>

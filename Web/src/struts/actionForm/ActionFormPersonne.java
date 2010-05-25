@@ -13,17 +13,17 @@ import org.apache.struts.action.ActionMessage;
 public class ActionFormPersonne extends ActionForm {
 private static final long serialVersionUID = 1L;
 	
-	private int codeOriginal = -1;
+	private int id = -1;
 	private String prenom = "";
 	private String nom = "";
 	private Date naissance = null;
 	private String photo = "";
 	
-	public int getCodeOriginal() {
-		return codeOriginal;
+	public int getId() {
+		return id;
 	}
-	public void setCodeOriginal(int codeOriginal) {
-		this.codeOriginal = codeOriginal;
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getPrenom() {

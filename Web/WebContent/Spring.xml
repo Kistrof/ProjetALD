@@ -60,6 +60,7 @@
 	
 	<bean name="/verifAddOrUpdatePersonne" class="struts.action.ActionAjoutPersonne">
 		<property name="daoPersonneTemp" ref="daoPersonneTemp" />
+		<property name="daoPersonne" ref="daoPersonne" />
 	</bean>
 	
 	<bean name="/AffichePersonne" class="struts.action.ActionGetPersonne">
