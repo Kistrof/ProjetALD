@@ -12,7 +12,8 @@
 		<form-bean name="formAjoutPro"         type="struts.actionForm.ActionFormAjoutPro"/>
 		<form-bean name="formRecherche" 	   type="struts.actionForm.ActionFormRecherche"/>
 		<form-bean name="formActionNoterFilm"  type="struts.actionForm.ActionFormNoterFilm" />
-		
+		<form-bean name="formActionPersonne"   type="struts.actionForm.ActionFormPersonne" />
+		<form-bean name="formActionAjouterPersonneToFilm" type="struts.actionForm.ActionFormAjouterPersonneToFilm" />
 		
 		
 		
@@ -81,10 +82,62 @@
 			<forward name="AfficheFilm" path="/AfficheFilm.do" />
 		</action>
 		
+		<action path="/modifPersonne" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/AjoutOrModifPersonne.jsp" />
+		</action>
 		
+		<action path="/verifAddOrUpdatePersonne" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionPersonne" scope="request" validate="true" input="/vues/Erreurs.jsp">
+			<forward name="AjoutPersonneOK" path="/vues/Accueil.jsp" />
+		</action>
 		
+		<action path="/AffichePersonne" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/AffichePersonne.jsp" />
+		</action>
 		
+		<action path="/ajouterActeur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterActeur.jsp" />
+		</action>
 		
+		<action path="/ajouterProducteur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterProducteur.jsp" />
+		</action>
+		
+		<action path="/ajouterRealisateur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterRealisateur.jsp" />
+		</action>
+		
+		<action path="/ajouterFilmographie" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterFilmographie.jsp" />
+		</action>
+		
+		<action path="/ajouterProduction" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterProduction.jsp" />
+		</action>
+		
+		<action path="/ajouterRealisation" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterRealisation.jsp" />
+		</action>
+		
+		<action path="/actionAjouterPersonneToFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionAjouterPersonneToFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
+			<forward name="AfficheFilm" path="/AfficheFilm.do" />
+			<forward name="AffichePersonne" path="/AffichePersonne.do" />
+		</action>
+		
+		<action path="/AjouterFilm" forward="/vues/AjoutOrModifFilm.jsp" />
+		
+		<action path="/AjouterPersonne" forward="/vues/AjoutOrModifPersonne.jsp" />
+		
+		<action path="/supprActeur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/afficheFilm.do" />
+		</action>
+		
+		<action path="/supprProducteur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/afficheFilm.do" />
+		</action>
+		
+		<action path="/supprRealisateur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/afficheFilm.do" />
+		</action>
 		
 		
 		
