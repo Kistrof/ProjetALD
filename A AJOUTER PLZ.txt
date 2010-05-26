@@ -1,0 +1,4 @@
+- les lien pour ajouter les films / Personnes
+- Pouvoir supprimer des recompense / film dans personne / personne dans film
+- Pouvoir modifier des recompense / film dans personne / personne dans film
+- bien mettre les jsp avec le header et footer sur toutes les jsp
