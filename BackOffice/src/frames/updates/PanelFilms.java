@@ -52,11 +52,14 @@ public class PanelFilms extends JPanel
 		tableModel.addColumn("Date");
 		tableModel.addColumn("Titre");
 		table = new JTable(tableModel);
-		for (int i = 0 ; i < liste.size() ; i++)
+		for (int i = 0 ; i < liste.size(); i++)
 		{
 			FilmTemp ft = liste.get(i);
 			Film f = ft.getOriginal();
-			tableModel.addRow(new String[]{ft.getId()+"", ft.getSoumission()+"", f.getTitre()});
+			if(f != null)
+				tableModel.addRow(new String[]{ft.getId()+"", ft.getSoumission()+"", ""+f.getTitre()+""});
+			else
+				tableModel.addRow(new String[]{ft.getId()+"", ft.getSoumission()+"", "Nouveau Film"});
 		}
 		table.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {

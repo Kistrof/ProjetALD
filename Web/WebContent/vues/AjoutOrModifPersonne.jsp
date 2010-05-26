@@ -1,14 +1,7 @@
-<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
-<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
-<%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ajout/édition d'une personne</title>
-</head>
-<body>
+
+<link rel=stylesheet type="text/css" href="http://127.0.0.1:8080/Web/styles/imdb.css"/>
+<%@include file="./includes/header.jsp" %>
+
 <html:form action="/verifAddOrUpdatePersonne.do">
 	
 	<logic:empty name="PERSONNE">
@@ -23,29 +16,49 @@
 			<tr>
 				<td>Prenom : </td>
 				<td>
-						<html:text property="prenom"  name="PERSONNE" />
+					<logic:empty name="PERSONNE">
+						<html:text property="prenom"  />
+					</logic:empty>
+					<logic:notEmpty name="PERSONNE">
+							<html:text property="prenom"  name="PERSONNE" />
+					</logic:notEmpty>
 				</td>
 			</tr>
 			<tr>
 				<td>Nom : </td>
 				<td>
-						<html:text property="nom" name="PERSONNE" />
+					<logic:empty name="PERSONNE">
+						<html:text property="nom"  />
+					</logic:empty>
+					<logic:notEmpty name="PERSONNE">
+							<html:text property="nom"  name="PERSONNE" />
+					</logic:notEmpty>
 				</td>
 			</tr>
 			<tr>
 				<td>Date de naissance (yyyy-MM-dd): </td>
 				<td>
-						<html:text property="naissance" name="PERSONNE" />
+					<logic:empty name="PERSONNE">
+						<html:text property="naissance"  />
+					</logic:empty>
+					<logic:notEmpty name="PERSONNE">
+							<html:text property="naissance"  name="PERSONNE" />
+					</logic:notEmpty>
 				</td>
 			</tr>
 			<tr>
 				<td>Lien vers la photo : </td>
 				<td>
-						<html:text property="photo" name="PERSONNE" />
+					<logic:empty name="PERSONNE">
+						<html:text property="photo"  />
+					</logic:empty>
+					<logic:notEmpty name="PERSONNE">
+							<html:text property="photo"  name="PERSONNE" />
+					</logic:notEmpty>
 				</td>
 			</tr>
 		</table>
 		<html:submit>Valider</html:submit>
 	</html:form>
-</body>
-</html>
+
+<%@include file="./includes/footer.jsp" %>
