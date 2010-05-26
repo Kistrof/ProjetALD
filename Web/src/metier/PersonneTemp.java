@@ -18,10 +18,11 @@ public class PersonneTemp extends Modification {
 	private String photo = "";
 	private Recompense suppr_recompense;
 	
-	private Personne original;
+	private Personne original = null;
 	
 	/**
 	 * Constructeur d'une personne temps
+	 * @param original
 	 * @param id
 	 * @param nom
 	 * @param prenom
@@ -29,9 +30,10 @@ public class PersonneTemp extends Modification {
 	 * @param photo
 	 * @param supprRecompense
 	 */
-	public PersonneTemp(int id, String nom, String prenom, Date naissance,
+	public PersonneTemp(int id, Personne original, String nom, String prenom, Date naissance,
 			String photo, Recompense supprRecompense, Pro auteur, Date dateModif) {
 		super(id, auteur, dateModif);
+		this.original = original;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.naissance = naissance;
@@ -118,6 +120,8 @@ public class PersonneTemp extends Modification {
 	 * @see metier.Modification#appliquer()
 	 */
 	public void appliquer() {
+		if (original == null) original = new Personne();
+		
 		if(this.nom != null)
 			original.setNom(this.nom);
 		

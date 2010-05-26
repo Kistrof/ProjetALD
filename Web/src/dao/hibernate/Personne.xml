@@ -7,7 +7,7 @@
 		<property name="prenom"	type="string"		column="prenom" />
 		<property name="naissance"			type="date"	column="naissance" />
 		<property name="photo"		type="string"	column="photo" />
-		<property name="date_maj"	type="date"	column="date_maj" />
+		<property name="date_maj"	type="timestamp"	column="date_maj" />
 		<property name="popularite"		type="int"		column="popularite" />
 		<bag name="filmographie" table="acteurs" lazy="false">
 			<key column="personneid" />

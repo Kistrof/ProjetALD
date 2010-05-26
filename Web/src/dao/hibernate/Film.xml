@@ -8,7 +8,7 @@
 		<property name="cout"			type="double"	column="cout" />
 		<property name="affiche"		type="string"	column="affiche" />
 		<property name="description"	type="string"	column="description" />
-		<property name="date_maj"		type="date"		column="date_maj" />
+		<property name="date_maj"		type="timestamp"	column="date_maj" />
 		<property name="note_moyenne"	type="double"	column="note_moyenne" />
 		<bag name="producteurs" table="producteurs" lazy="false">
 			<key column="filmid" />

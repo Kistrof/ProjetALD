@@ -108,6 +108,11 @@ public class Personne {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	
+	public String getNomComplet()
+	{
+		return this.prenom + " " + this.nom;
+	}
 
 	public Date getNaissance() {
 		return naissance;

@@ -25,6 +25,7 @@
 	
 	<bean name="/verifAddOrUpdateFilm" class="struts.action.ActionAjoutFilm">
 		<property name="daoFilmTemp" ref="daoFilmTemp" />
+		<property name="daoFilm" ref="daoFilm" />
 	</bean>
 	
 	<bean name="/VerifLogin" class="struts.action.ActionVerifLogin">
@@ -53,11 +54,72 @@
 		<property name="daoFilm" ref="daoFilm"/>
 	</bean>
 	
+	<bean name="/modifPersonne" class="struts.action.ActionGetPersonne">
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
 	
+	<bean name="/verifAddOrUpdatePersonne" class="struts.action.ActionAjoutPersonne">
+		<property name="daoPersonneTemp" ref="daoPersonneTemp" />
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
 	
+	<bean name="/AffichePersonne" class="struts.action.ActionGetPersonne">
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
 	
+	<bean name="/ajouterActeur" class="struts.action.ActionLoadPersonnesForFilm">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
 	
+	<bean name="/ajouterProducteur" class="struts.action.ActionLoadPersonnesForFilm">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
 	
+	<bean name="/ajouterRealisateur" class="struts.action.ActionLoadPersonnesForFilm">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
+	
+	<bean name="/actionAjouterPersonneToFilm" class="struts.action.ActionAjouterPersonneToFilm">
+		<property name="daoModifRelFilmPers" ref="daoModifRelFilmPers" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoFilm" ref="daoFilm"/>
+	</bean>
+	
+	<bean name="/supprActeur" class="struts.action.ActionSupprActeur">
+		<property name="daoFilm" ref="daoFilm" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoModif" ref="daoModifRelFilmPers" />
+	</bean>
+	
+	<bean name="/supprProducteur" class="struts.action.ActionSupprProducteur">
+		<property name="daoFilm" ref="daoFilm" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoModif" ref="daoModifRelFilmPers" />
+	</bean>
+	
+	<bean name="/supprRealisateur" class="struts.action.ActionSupprRealisateur">
+		<property name="daoFilm" ref="daoFilm" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoModif" ref="daoModifRelFilmPers" />
+	</bean>
+	
+	<bean name="/ajouterFilmographie" class="struts.action.ActionLoadFilmPersonne">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
+	
+	<bean name="/ajouterProduction" class="struts.action.ActionLoadFilmPersonne">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
+	
+	<bean name="/ajouterRealisation" class="struts.action.ActionLoadFilmPersonne">
+		<property name="daoFilm" ref="daoFilm"/>
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
 	
 	
 	

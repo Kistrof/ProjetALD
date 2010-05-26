@@ -1,9 +1,12 @@
 package struts.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import metier.Film;
+import metier.Personne;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -13,16 +16,23 @@ import org.apache.struts.action.ActionMessage;
 import org.apache.struts.action.ActionMessages;
 
 import dao.DAOFilm;
+import dao.DAOPersonne;
 
-public class ActionGetFilm extends Action
+public class ActionLoadPersonnesForFilm extends Action
 {
 	
+	private DAOPersonne daoPersonne;
 	private DAOFilm daoFilm;
 	
+	public void setDaoPersonne(DAOPersonne daoPersonne) {
+		this.daoPersonne = daoPersonne;
+	}
+
 	public void setDaoFilm(DAOFilm daoFilm) {
 		this.daoFilm = daoFilm;
 	}
 
+	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		try
@@ -31,7 +41,9 @@ public class ActionGetFilm extends Action
 			int id = Integer.parseInt(id_str);
 			Film film = daoFilm.get(id);
 			if (film == null) throw new NullPointerException();
+			ArrayList<Personne> tab = daoPersonne.loadAll();
 			request.setAttribute("FILM", film);
+			request.setAttribute("PERSONNES", tab);
 			return mapping.findForward("next");
 		}
 		catch (NumberFormatException ex)

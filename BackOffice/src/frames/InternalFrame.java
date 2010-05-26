@@ -2,23 +2,16 @@ package frames;
 
 import javax.swing.JInternalFrame;
 
-public class FrameNavigation extends JInternalFrame
+public class InternalFrame extends JInternalFrame
 {
 	private static final long serialVersionUID = 1L;
 	
-	
-	
-	public FrameNavigation()
+	public InternalFrame(String titre)
 	{
-		super("Navigation");
+		super(titre);
 		this.setResizable(true);
 		this.setMaximizable(true);
-		this.setSize(320, 240);
-		
-		
-		
+		this.setIconifiable(true);
+		this.setSize(640, 480);
 	}
-	
-	
-	
 }

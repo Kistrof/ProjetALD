@@ -4,7 +4,7 @@
 	<class name="metier.Recompense" table="recompense" lazy="false">
 		<id name="id" type="integer" column="id"><generator class="native" /></id>
 		<property name="annee" type="integer" column="annee"/>
-		<property name="date_maj" type="date" column="date_maj"/>
+		<property name="date_maj" type="timestamp" column="date_maj"/>
 		<many-to-one name="prix" column="prixid" />
 		
 	</class>
