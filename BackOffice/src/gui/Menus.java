@@ -1,14 +1,18 @@
 package gui;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class Menus extends JMenuBar
 {
@@ -18,7 +22,7 @@ public class Menus extends JMenuBar
 	private JMenuItem file_quitter;
 	private JMenuItem bdd_import, bdd_export, bdd_reset;
 	private JCheckBoxMenuItem fen_pros, fen_nav, fen_updates;
-	private JMenuItem aide_propos, aide_aide;
+	private JMenuItem aide_propos;
 	
 	public Menus()
 	{
@@ -88,15 +92,7 @@ public class Menus extends JMenuBar
 		
 		this.menu_aide = new JMenu("?");
 		
-		this.aide_aide = new JMenuItem("Aide");
-		this.menu_aide.add(this.aide_aide);
-		this.aide_aide.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				aide();
-			}
-		});
-		
-		this.aide_propos = new JMenuItem("A propos ...");
+		this.aide_propos = new JMenuItem("A propos");
 		this.menu_aide.add(this.aide_propos);
 		this.aide_propos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -110,19 +106,38 @@ public class Menus extends JMenuBar
 		this.add(this.menu_aide);
 	}
 
-	protected void propos() {
-		// TODO Ouvrir une boite d'info "A propos ..."
-		
-	}
-
-	protected void aide() {
-		// TODO Ouvrir une boite d'info "Aide"
-		
+	protected void propos()
+	{
+		JPanel p = new JPanel(new GridLayout(0, 1));
+		p.add(new JLabel("kikoo"));
+		p.add(new JLabel("lol"));
+		p.add(new JLabel("mdr"));
+		p.add(new JLabel("ptdr"));
+		p.add(new JLabel("rofl"));
+		String[] options = {"Fermer"};
+		JOptionPane.showOptionDialog(Principale.getInstance(), p, "A propos", JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 	}
 	
-	protected void reset() {
-		// TODO Demander confirmation pour réinitialiser la BDD
-		
+	protected void reset()
+	{
+		int reponse = JOptionPane.showConfirmDialog(Principale.getInstance(), "Etes-vous certain de vouloir réinitialiser la base de données ?", "Réinitialisation BDD", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		if (reponse == JOptionPane.YES_OPTION)
+		{
+			reponse = JOptionPane.showConfirmDialog(Principale.getInstance(), "Vous êtes quand même sur le point de vider tout le site !\nToujours envie de continuer ?", "Réinitialisation BDD", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if (reponse == JOptionPane.YES_OPTION)
+			{
+				reponse = JOptionPane.showConfirmDialog(Principale.getInstance(), "Aucun retour en arrière n'est possible après l'opération ...", "Réinitialisation BDD", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+				if (reponse == JOptionPane.OK_OPTION)
+				{
+					
+					
+					// TODO reset de la BDD
+					System.out.println("RESET BDD !!!!!");
+					
+					
+				}
+			}
+		}
 	}
 
 	protected void exporter() {
