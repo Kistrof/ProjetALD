@@ -59,7 +59,16 @@ public class DAOProHbn extends DAOHibernate implements DAOPro
 		this.close(s);
 	}
 	
-	
+	public boolean verifExistanceLogin(String pseudo)
+	{
+		Session s=this.connect();
+		org.hibernate.Query q=s.createQuery("select count(*) from Pro as p where p.pseudo='"+pseudo+"'");
+		
+		   if(((Long)q.iterate().next()>0))
+			   return true;
+		   else
+			   return false;
+	}
 
 	@Override
 	public boolean verifLogin(String pseudo, String mdp) {
