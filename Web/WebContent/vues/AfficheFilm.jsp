@@ -1,15 +1,5 @@
-<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
-<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
-<%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Fiche Film</title>
-</head>
-<body>
+<link rel=stylesheet type="text/css" href="http://127.0.0.1:8080/Web/styles/imdb.css"/>
+<%@include file="./includes/header.jsp" %>
 	<h1><bean:write name="FILM" property="titre" /></h1>
 	Année de sortie : <bean:write name="FILM" property="annee_sortie" /><br/>
 	Cout : <bean:write name="FILM" property="cout" /><br/>
@@ -39,5 +29,5 @@
 </logic:iterate>
 	<br/>
 	<html:link action="/noterFilm" paramId="id" paramName="FILM" paramProperty="id" >Noter ce film</html:link>
-</body>
-</html>
+
+<%@include file="./includes/footer.jsp" %>
