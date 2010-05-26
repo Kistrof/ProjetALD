@@ -16,6 +16,7 @@ public class FrameUpdates extends InternalFrame
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.addTab("Personnes", null, new PanelPersonnes(), "Modifications des personnes");
 		tabbedPane.addTab("Films", null, new PanelFilms(), "Modifications des films");
+		tabbedPane.addTab("Récompenses", null, new PanelRecompenses(), "Modifications des récompenses");
 		tabbedPane.addTab("FilmsPersonnes", null, new PanelFilmsPersonnes(), "Modifications des relations entre film et personne");
 		
 		this.setContentPane(tabbedPane);
