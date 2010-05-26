@@ -19,8 +19,6 @@ import config.Config;
 import metier.Film;
 import metier.ModifRelationFilmPers;
 import metier.Personne;
-import metier.PersonneTemp;
-import metier.Recompense;
 
 import dao.DAOFilm;
 import dao.DAOModifRelFilmPers;
@@ -29,6 +27,7 @@ import frames.MyDefaultTableModel;
 
 public class PanelFilmsPersonnes extends JPanel {
 	
+	private static final long serialVersionUID = 1L;
 	private DAOPersonne daoPersonne;
 	private DAOFilm daoFilm;
 	private DAOModifRelFilmPers daoModifRelFilmPers;
@@ -58,8 +57,7 @@ public class PanelFilmsPersonnes extends JPanel {
 		for (int i = 0 ; i < liste.size(); i++)
 		{
 			ModifRelationFilmPers mod = liste.get(i);
-			Film fi = mod.getOriginal();
-			Film f = daoFilm.get(fi.getId());
+			Film f = mod.getOriginal();
 			Personne p = null;
 			if(mod.getAjout_acteur() != null) p = mod.getAjout_acteur();
 			else if(mod.getAjout_producteur() != null) p = mod.getAjout_producteur();
