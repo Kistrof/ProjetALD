@@ -1,14 +1,5 @@
-<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
-<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
-<%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ajout/édition d'un film</title>
-</head>
-<body>
+<link rel=stylesheet type="text/css" href="http://127.0.0.1:8080/Web/styles/imdb.css"/>
+<%@include file="./includes/header.jsp" %>
 <logic:empty name="FILM">
 	<h1>Ajouter un film</h1>
 </logic:empty><logic:notEmpty name="FILM">
@@ -39,5 +30,5 @@
 		</table>
 		<html:submit>Valider</html:submit>
 	</html:form>
-</body>
-</html>
+
+<%@include file="./includes/footer.jsp" %>
