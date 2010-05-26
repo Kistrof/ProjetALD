@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="daoCeremonie"         class="dao.hibernate.DAOCeremonieHbn" />
+	<bean id="daoFilm"              class="dao.hibernate.DAOFilmHbn" />
+	<bean id="daoFilmTemp"          class="dao.hibernate.DAOFilmTempHbn" />
+	<bean id="daoModifRelFilmPers"  class="dao.hibernate.DAOModifRelFilmPersHbn" />
+	<bean id="daoNote"              class="dao.hibernate.DAONoteHbn" />
+	<bean id="daoPersonne"          class="dao.hibernate.DAOPersonneHbn" />
+	<bean id="daoPersonneTemp"      class="dao.hibernate.DAOPersonneTempHbn" />
+	<bean id="daoPrix"              class="dao.hibernate.DAOPrixHbn" />
+	<bean id="daoPro"               class="dao.hibernate.DAOProHbn" />
+	<bean id="daoRecompense"        class="dao.hibernate.DAORecompenseHbn" />
+	<bean id="daoRecompenseTemp"    class="dao.hibernate.DAORecompenseTempHbn" />
+</beans>
