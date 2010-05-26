@@ -87,7 +87,9 @@ public class DAOProHbn extends DAOHibernate implements DAOPro
 	{
 		ArrayList<Pro> tab = null;
 		Session s = this.connect();
-		tab = (ArrayList<Pro>) s.createQuery("FROM Pro WHERE date_inscription LIKE '"+year+"-"+month+"-%'").list();
+		String m = ""+month;
+		if (month < 10) m = "0"+month;
+		tab = (ArrayList<Pro>) s.createQuery("FROM Pro WHERE date_inscription LIKE '"+year+"-"+m+"-%'").list();
 		this.close(s);
 		return tab;
 	}
