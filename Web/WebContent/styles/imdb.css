@@ -9,7 +9,7 @@ body
 	border:solid 1px;
 	position:absolute;
 	width:820px;
-	height:50px;
+	height:70px;
 }
 
 #header #zone_connexion
@@ -18,8 +18,8 @@ body
  top:0px;
  left:470px;
  width:350px;
- height:50px;
- border:solid 1px;
+ height:70px;
+border-left:solid 1px;
 }
 
 #corps
@@ -27,9 +27,9 @@ body
 	border:solid 1px;
 	position:absolute;
 	left:320px;
-	top:70px;
+	top:90px;
 	width:510px;
-	height:400px;
+
 	
 	
 }
@@ -38,11 +38,10 @@ body
 {
 	border:solid 1px;
 	position:absolute;
-	top:70px;
+	top:90px;
 	width:300px;
 	height:400px;
 	
-	widh:300px;
 }
 
 
@@ -51,13 +50,38 @@ float:left;
 width:90px;
  
  }
+
+label.rechercheFilm
+{
+ font-size:15px;	
+ width:150px;
+} 
  
  #formulaire_connexion .petitChamp
  {
   display:inline;
-  height:10px;
+  height:18px;
    font-size:10px;
    width:100px;
  }
-
  
+ #formulaire_connexion fieldset
+ {
+  border:0px;
+ }
+
+ #div_boutons_submit
+ {
+ 	
+ 	width:20px;
+ 	heigh:20px;
+ 	position:absolute;
+ 	top:0px;
+ 	left:310px;
+ }
+ 
+ .spanError
+ {
+  font-size:10px;
+  color:red;
+ }

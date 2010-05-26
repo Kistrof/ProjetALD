@@ -1,5 +1,7 @@
 package struts.action;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,6 +14,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import struts.actionForm.ActionFormVerifLogin;
+import tool.BoiteAOutilWeb;
 
 import dao.DAOPro;
 
@@ -34,11 +37,16 @@ public class ActionVerifLogin extends Action {
 		String login=f.getLogin();
 		String pass=f.getPass();
 		String forward="";
+		HttpSession session = request.getSession();
+		//BoiteAOutilWeb.verifieProvenance(session,request,"PARAM",);
 		if(daoPro.verifLogin(login,pass))
 		{
-			HttpSession session = request.getSession();
+			
 			Pro p=daoPro.get(login);
 			session.setAttribute("PRO",p );
+			Date d=new Date();
+			p.setDerniere_visite(d);
+			daoPro.update(p);
 			forward="RetourAccueil";
 			System.out.println(session.getAttribute("PRO"));
 		}else
