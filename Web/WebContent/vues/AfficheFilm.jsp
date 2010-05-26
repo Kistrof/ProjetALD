@@ -10,11 +10,12 @@
 	Note : <bean:write name="FILM" property="note_moyenne" /><br/>
 	Dernière mise à jour : <bean:write name="FILM" property="date_maj" /><br/>
 	<br/>
-	Récompenses :<br/>
+	<b>Récompenses :</b><br/>
 <logic:iterate id="recompense" name="FILM" property="recompenses">
 	<bean:write name="recompense" property="prix" /><br/>
 </logic:iterate>
-	<br/>
+	<html:link action="/ajouterRecompenseToFilm" paramId="id" paramName="FILM" paramProperty="id" >Ajouter une récompense</html:link>
+	<br/><br/>
 	<b>Casting :</b><br/>
 <logic:iterate id="acteur" name="FILM" property="acteurs">
 	<bean:write name="acteur" property="prenom" /> <bean:write name="acteur" property="nom" /><br/>

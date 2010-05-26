@@ -16,9 +16,6 @@
 		<form-bean name="formActionAjouterRecompenseToPersonne"			type="struts.actionForm.ActionFormAjouterRecompenseToPersonne" />
 		
 		
-		
-		
-		
 	</form-beans>
 
 <!-- ========================================= Global Exception Definitions -->
@@ -147,7 +144,7 @@
 		</action>
 		
 		<action path="/ajouterRecompenseToFilm" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
-			<forward name="next" path="/vues/FormAjouterRecompense.jsp" />
+			<forward name="next" path="/vues/FormAjouterRecompenseToFilm.jsp" />
 		</action>
 		
 		<action path="/actionAjouterRecompenseToPersonne" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionAjouterRecompenseToPersonne" scope="request" validate="true" input="/vues/Erreurs.jsp">
