@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ajouter un film à un acteur</title>
+<title>Ajouter une récompense à un acteur</title>
 </head>
 <body>
 Ajouter une récompense à l'acteur <bean:write name="PERSONNE" property="prenom" /> <bean:write name="PERSONNE" property="nom" />
