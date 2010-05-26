@@ -54,7 +54,7 @@ public class ActionAjoutPersonne extends Action {
 			{
 				if (nom.equals(original.getNom())) nom = "";
 				if (prenom.equals(original.getPrenom())) prenom = "";
-				if (naissance.equals(original.getNaissance())) naissance = null;
+				/*if (naissance.equals(original.getNaissance())) */naissance = null;
 				if (photo == original.getPhoto()) photo = "";
 			}
 			

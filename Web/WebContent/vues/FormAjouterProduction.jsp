@@ -7,15 +7,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Ajouter un film à un producteur</title>
 </head>
 <body>
-Ajouter un acteur au film <bean:write name="FILM" property="titre" />
+Ajouter un film au producteur <bean:write name="PERSONNE" property="prenom" /> <bean:write name="PERSONNE" property="nom" />
 <html:form action="/actionAjouterPersonneToFilm.do" >
-	<html:hidden property="id" name="FILM" />
-	<html:hidden property="FromFilm" value="true" />
-	<html:select property="codeActeur">
-		<html:options collection="PERSONNES" labelProperty="nomComplet" property="id" />
+	<html:hidden property="codeProducteur" name="PERSONNE" value="id" />
+	<html:hidden property="FromFilm" value="false" />
+	<html:select property="id">
+		<html:options collection="FILMS" labelProperty="titre" property="id" />
 	</html:select>
 	<html:submit>Ajouter</html:submit>
 </html:form>

@@ -106,8 +106,21 @@
 			<forward name="next" path="/vues/FormAjouterRealisateur.jsp" />
 		</action>
 		
+		<action path="/ajouterFilmographie" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterFilmographie.jsp" />
+		</action>
+		
+		<action path="/ajouterProduction" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterProduction.jsp" />
+		</action>
+		
+		<action path="/ajouterRealisation" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterRealisation.jsp" />
+		</action>
+		
 		<action path="/actionAjouterPersonneToFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionAjouterPersonneToFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
 			<forward name="AfficheFilm" path="/AfficheFilm.do" />
+			<forward name="AffichePersonne" path="/AffichePersonne.do" />
 		</action>
 		
 		<action path="/AjouterFilm" forward="/vues/AjoutOrModifFilm.jsp" />
