@@ -128,6 +128,5 @@ CREATE TABLE `rel_film_pers` (
   `soumission` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `filmid` int(10) NOT NULL DEFAULT '0',
   `prologin` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `prologin` (`prologin`)
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
