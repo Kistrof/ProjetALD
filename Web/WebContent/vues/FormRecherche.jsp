@@ -49,7 +49,7 @@
 			<ul>
 				<logic:iterate id="Recherche" name="RECHERCHE_FILM" scope="request">
 					<li>
-						<html:link action="/afficheFilm.do" paramId="id" paramName="Recherche" paramProperty="id"> 
+						<html:link action="/AfficheFilm.do" paramId="id" paramName="Recherche" paramProperty="id"> 
 						<bean:write name="Recherche" property="titre"/>
 						</html:link>
 					</li>
@@ -63,7 +63,7 @@
 			<ul>
 				<logic:iterate id="Recherche" name="RECHERCHE_PERSONNE" scope="request">
 					<li>
-						<html:link action="/afficheFilm.do" paramId="id" paramName="Recherche" paramProperty="id"> 
+						<html:link action="/AffichePersonne.do" paramId="id" paramName="Recherche" paramProperty="id"> 
 							<bean:write name="Recherche" property="prenom"/>
 							&nbsp;
 							<bean:write name="Recherche" property="nom"/>

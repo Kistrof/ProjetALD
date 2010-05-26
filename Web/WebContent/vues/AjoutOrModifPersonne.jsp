@@ -33,7 +33,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>Date de naissance : </td>
+				<td>Date de naissance (yyyy-MM-dd): </td>
 				<td>
 						<html:text property="naissance" name="PERSONNE" />
 				</td>

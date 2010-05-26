@@ -119,8 +119,11 @@
 		</action>
 		
 		<action path="/actionAjouterPersonneToFilm" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionAjouterPersonneToFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
-			<forward name="AfficheFilm" path="/AfficheFilm.do" />
-			<forward name="AffichePersonne" path="/AffichePersonne.do" />
+			<forward name="next" path="/AfficheFilm.do" />
+		</action>
+		
+		<action path="/actionAjouterFilmToPersonne" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionAjouterPersonneToFilm" scope="request" validate="true" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/AffichePersonne.do" />
 		</action>
 		
 		<action path="/AjouterFilm" forward="/vues/AjoutOrModifFilm.jsp" />

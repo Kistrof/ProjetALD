@@ -1,5 +1,6 @@
 package struts.action;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,14 +48,21 @@ public class ActionAjoutPersonne extends Action {
 			Personne original = daoPersonne.get(p.getId());
 			String nom = p.getNom();
 			String prenom = p.getPrenom();
-			Date naissance = p.getNaissance();
+			String n = p.getNaissance();
 			String photo = p.getPhoto();
+			Date naissance;
+			try {
+				naissance = new Date();
+				naissance = stringToDate(n, "yyyy-MM-dd");
+			} catch (Exception e) {
+				naissance = null;
+			}
 			
 			if (original != null)
 			{
 				if (nom.equals(original.getNom())) nom = "";
 				if (prenom.equals(original.getPrenom())) prenom = "";
-				/*if (naissance.equals(original.getNaissance())) */naissance = null;
+				if (naissance.equals(original.getNaissance())) naissance = null;
 				if (photo == original.getPhoto()) photo = "";
 			}
 			
@@ -71,5 +79,10 @@ public class ActionAjoutPersonne extends Action {
 			return mapping.getInputForward();
 		}
 	}
+	
+	private Date stringToDate(String sDate, String sFormat) throws Exception {
+        SimpleDateFormat sdf = new SimpleDateFormat(sFormat);
+        return sdf.parse(sDate);
+} 
 
 }

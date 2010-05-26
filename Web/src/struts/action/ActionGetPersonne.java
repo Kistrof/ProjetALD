@@ -30,7 +30,10 @@ public class ActionGetPersonne extends Action {
 			int id = Integer.parseInt(id_str);
 			Personne personne = daoPersonne.get(id);
 			if (personne == null) throw new NullPointerException();
-			personne.setPopularite(personne.getPopularite() + 1);
+			int pop = personne.getPopularite();
+			pop++;
+			personne.setPopularite(pop);
+			daoPersonne.save(personne);
 			request.setAttribute("PERSONNE", personne);
 			return mapping.findForward("next");
 		}

@@ -121,6 +121,12 @@
 		<property name="daoPersonne" ref="daoPersonne" />
 	</bean>
 	
+	<bean name="/actionAjouterFilmToPersonne" class="struts.action.ActionAjouterPersonneToFilm">
+		<property name="daoModifRelFilmPers" ref="daoModifRelFilmPers" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoFilm" ref="daoFilm"/>
+	</bean>
+	
 	
 	
 	

@@ -11,9 +11,8 @@
 </head>
 <body>
 Ajouter un film au producteur <bean:write name="PERSONNE" property="prenom" /> <bean:write name="PERSONNE" property="nom" />
-<html:form action="/actionAjouterPersonneToFilm.do" >
-	<html:hidden property="codeProducteur" name="PERSONNE" value="id" />
-	<html:hidden property="FromFilm" value="false" />
+<html:form action="/actionAjouterFilmToPersonne.do" >
+	<input type="hidden" name="codeProducteur" value="<bean:write name="PERSONNE" property="id" />" />
 	<html:select property="id">
 		<html:options collection="FILMS" labelProperty="titre" property="id" />
 	</html:select>

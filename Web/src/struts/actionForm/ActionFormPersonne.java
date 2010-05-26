@@ -1,7 +1,9 @@
 package struts.actionForm;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,7 +18,7 @@ private static final long serialVersionUID = 1L;
 	private int id = -1;
 	private String prenom = "";
 	private String nom = "";
-	private Date naissance = null;
+	private String naissance = "";
 	private String photo = "";
 	
 	public int getId() {
@@ -38,24 +40,12 @@ private static final long serialVersionUID = 1L;
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public Date getNaissance() {
+	public String getNaissance() {
 		return naissance;
 	}
 	
 	public void setNaissance(String n) {
-		if(!n.trim().equals(""))
-		{
-			n = n.trim();
-			Calendar c = Calendar.getInstance();
-			n = n.trim();
-			int j = Integer.parseInt(n.substring(0, 2));
-			int m = Integer.parseInt(n.substring(3, 5));
-			int a = Integer.parseInt(n.substring(6));
-			c.set(a, m, j);
-			Date dte = new Date();
-			dte = c.getTime();
-			this.naissance = dte;
-		}
+		this.naissance = n;
 	}
 	public String getPhoto() {
 		return photo;
@@ -70,10 +60,7 @@ private static final long serialVersionUID = 1L;
 		
 		if (this.nom.equals("")) erreurs.add("nom vide", new ActionMessage("erreurs.personne.nom_vide"));
 		if (this.prenom.equals("")) erreurs.add("prenom vide", new ActionMessage("erreurs.personne.prenom_vide"));
-		//if (this.naissance == null) erreurs.add("naissance vide", new ActionMessage("erreurs.personne.naissance_null"));
+		if (this.naissance.equals("")) erreurs.add("naissance vide", new ActionMessage("erreurs.personne.naissance_null"));
 		return erreurs;
 	}
-	
-	
-
 }
