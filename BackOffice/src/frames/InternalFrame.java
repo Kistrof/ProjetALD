@@ -2,7 +2,7 @@ package frames;
 
 import javax.swing.JInternalFrame;
 
-public class InternalFrame extends JInternalFrame
+public abstract class InternalFrame extends JInternalFrame
 {
 	private static final long serialVersionUID = 1L;
 	
