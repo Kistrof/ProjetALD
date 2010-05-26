@@ -16,6 +16,7 @@ import javax.swing.border.TitledBorder;
 
 import metier.Film;
 import metier.FilmTemp;
+import metier.Recompense;
 
 import config.Config;
 
@@ -36,8 +37,8 @@ public class PanelFilms extends JPanel
 	private JScrollPane scroll;
 	
 	private JPanel panel_details;
-	private JLabel l_auteur, l_titre, l_annee, l_cout, l_affiche, l_desc;
-	private JLabel v_auteur, v_titre, v_annee, v_cout, v_affiche, v_desc;
+	private JLabel l_auteur, l_titre, l_annee, l_cout, l_affiche, l_desc, l_recomp;
+	private JLabel v_auteur, v_titre, v_annee, v_cout, v_affiche, v_desc, v_recomp;
 	private JButton b_valider, b_rejeter;
 	
 	public PanelFilms()
@@ -84,7 +85,7 @@ public class PanelFilms extends JPanel
 			}
 		});
 		
-		panel_details = new JPanel(new GridLayout(7, 2));
+		panel_details = new JPanel(new GridLayout(0, 2));
 		panel_details.setBorder(new TitledBorder("Détails de la demande"));
 		
 		l_auteur = new JLabel("Auteur de la demande : ");
@@ -93,12 +94,14 @@ public class PanelFilms extends JPanel
 		l_cout = new JLabel("Cout : ");
 		l_affiche = new JLabel("Affiche : ");
 		l_desc = new JLabel("Description : ");
+		l_recomp = new JLabel("Suppression de récompense : ");
 		v_auteur = new JLabel();
 		v_titre = new JLabel();
 		v_annee = new JLabel();
 		v_cout = new JLabel();
 		v_affiche = new JLabel();
 		v_desc = new JLabel();
+		v_recomp = new JLabel();
 		
 		panel_details.add(l_auteur);
 		panel_details.add(v_auteur);
@@ -112,6 +115,8 @@ public class PanelFilms extends JPanel
 		panel_details.add(v_affiche);
 		panel_details.add(l_desc);
 		panel_details.add(v_desc);
+		panel_details.add(l_recomp);
+		panel_details.add(v_recomp);
 		panel_details.add(b_valider);
 		panel_details.add(b_rejeter);
 		
@@ -120,15 +125,29 @@ public class PanelFilms extends JPanel
 		this.add(panel_details);
 	}
 	
+	private void viderDetails()
+	{
+		v_auteur.setText("");
+		v_titre.setText("");
+		v_annee.setText("");
+		v_cout.setText("");
+		v_affiche.setText("");
+		v_desc.setText("");
+		v_recomp.setText("");
+	}
+	
 	public void updateDetails(FilmTemp ft)
 	{
-		System.out.println("updateDetails");
+		viderDetails();
 		v_auteur.setText(ft.getAuteur().getPseudo());
 		v_titre.setText(ft.getTitre());
 		v_annee.setText(""+ft.getAnnee_sortie());
 		v_cout.setText(""+ft.getCout());
 		v_affiche.setText(ft.getAffiche());
 		v_desc.setText(ft.getDescription());
+		Recompense r = ft.getSuppr_recompense();
+		if (r != null)
+			v_recomp.setText(r.getPrix().getTitre());
 	}
 	
 	public void valider(int n)
