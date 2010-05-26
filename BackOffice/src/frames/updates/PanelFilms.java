@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
 
 import metier.Film;
 import metier.FilmTemp;
@@ -22,6 +21,7 @@ import config.Config;
 
 import dao.DAOFilm;
 import dao.DAOFilmTemp;
+import frames.MyDefaultTableModel;
 
 public class PanelFilms extends JPanel
 {
@@ -148,13 +148,4 @@ public class PanelFilms extends JPanel
 		tableModel.removeRow(n);
 	}
 	
-	private class MyDefaultTableModel extends DefaultTableModel
-	{
-		private static final long serialVersionUID = 1L;
-
-		public boolean isCellEditable(int rowIndex, int columnIndex)
-		{
-			return false;
-		}
-	}
 }
