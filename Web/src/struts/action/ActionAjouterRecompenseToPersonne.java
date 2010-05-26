@@ -52,16 +52,6 @@ public class ActionAjouterRecompenseToPersonne extends Action {
 		HttpSession s = request.getSession();
 		ActionFormAjouterRecompenseToPersonne f = (ActionFormAjouterRecompenseToPersonne)form;
 		
-		Personne personne = null;
-		Film film = null;
-		
-		if(f.getFilmid() != -1) {
-			film = daoFilm.get(f.getFilmid());
-		}
-		else {
-			personne = daoPersonne.get(f.getPersonneid());
-		}
-		
 		Pro pro = (Pro)s.getAttribute("PRO");
 		if (pro == null)
 		{
@@ -70,27 +60,29 @@ public class ActionAjouterRecompenseToPersonne extends Action {
 			this.addErrors(request, erreurs);
 			return mapping.getInputForward();
 		}
-	
+		
+		Personne personne = null;
+		Film film = null;
+		if (f.getFilmid() != -1)
+		{
+			film = daoFilm.get(f.getFilmid());
+			request.setAttribute("id", f.getFilmid());
+			System.out.println("film : "+f.getFilmid());
+		}
+		else
+		{
+			personne = daoPersonne.get(f.getPersonneid());
+			request.setAttribute("id", f.getPersonneid());
+			System.out.println("personne : "+f.getPersonneid());
+		}
+		
 		Prix p = daoPrix.get(f.getPrixid());
 		int annee = f.getAnnee();
 		
-		
 		RecompenseTemp rec = new RecompenseTemp(-1, pro, new Date(), p, annee, null, personne, film);
 		daoRecompenseTemp.save(rec);
-
 		
-		if(f.getFilmid() != -1) {
-			request.setAttribute("id", film.getId());
-		}
-		else {
-			request.setAttribute("id", personne.getId());
-		}
-
-		return mapping.findForward("next");
-				
+		return mapping.findForward("next");	
 	}
 	
-	
-	
-
 }

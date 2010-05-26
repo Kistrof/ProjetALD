@@ -7,12 +7,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ajouter une récompense à un acteur</title>
+<title>Ajouter une récompense à un film</title>
 </head>
 <body>
-Ajouter une récompense à l'acteur <bean:write name="PERSONNE" property="prenom" /> <bean:write name="PERSONNE" property="nom" />
+Ajouter une récompense au film <bean:write name="FILM" property="titre" />
 <html:form action="/actionAjouterRecompenseToPersonne.do" >
-	<input type="hidden" name="personneid" value="<bean:write name="PERSONNE" property="id" />" />
+	<input type="hidden" name="filmid" value="<bean:write name="FILM" property="id" />" />
 	<html:select property="prixid">
 		<html:options collection="PRIXS" labelProperty="titreComplet" property="id" />
 	</html:select>

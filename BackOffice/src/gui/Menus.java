@@ -101,7 +101,7 @@ public class Menus extends JMenuBar
 		});
 		
 		this.add(this.menu_file);
-		this.add(this.menu_bdd);
+		//this.add(this.menu_bdd);
 		this.add(this.menu_fenetres);
 		this.add(this.menu_aide);
 	}
@@ -131,7 +131,7 @@ public class Menus extends JMenuBar
 				{
 					
 					
-					// TODO reset de la BDD
+					// TO-DO reset de la BDD
 					System.out.println("RESET BDD !!!!!");
 					
 					
@@ -141,12 +141,12 @@ public class Menus extends JMenuBar
 	}
 
 	protected void exporter() {
-		// TODO JFileChooser pour exporter la BDD
+		// TO-DO JFileChooser pour exporter la BDD
 		
 	}
 
 	protected void importer() {
-		// TODO JFileChooser pour importer une BDD
+		// TO-DO JFileChooser pour importer une BDD
 		
 	}
 }
