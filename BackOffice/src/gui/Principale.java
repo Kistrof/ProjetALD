@@ -3,10 +3,12 @@ package gui;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+//import javax.swing.UIManager;
+//import javax.swing.UnsupportedLookAndFeelException;
 
-import frames.FrameMembres;
-import frames.FrameNavigation;
-import frames.FrameUpdates;
+import frames.membres.FrameMembres;
+import frames.navigation.FrameNavigation;
+import frames.updates.FrameUpdates;
 
 public class Principale extends JFrame
 {
@@ -15,6 +17,22 @@ public class Principale extends JFrame
 	public static Principale getInstance() {
 		if (instance == null) instance = new Principale();
 		return instance;
+	}
+	
+	// Méthode de raccourci à supprimer à la fin du développement : évite d'avoir à se logguer ^^
+	public static void main(String[] args) {/*
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException e) {
+			System.out.println("*** Erreur : ClassNotFound");
+		} catch (InstantiationException e) {
+			System.out.println("*** Erreur : Instantiation");
+		} catch (IllegalAccessException e) {
+			System.out.println("*** Erreur : IllegalAccess");
+		} catch (UnsupportedLookAndFeelException e) {
+			System.out.println("*** Erreur : UnsupportedLookAndFeel");
+		}*/
+		getInstance();
 	}
 	
 	private Menus menus;

@@ -11,8 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+//import javax.swing.UIManager;
+//import javax.swing.UnsupportedLookAndFeelException;
 
 import config.Config;
 
@@ -23,7 +23,7 @@ import dao.DAOPro;
 public class Connexion extends JFrame implements ActionListener
 {
 	private static final long serialVersionUID = 1L;
-	public static void main(String[] args) {
+	public static void main(String[] args) {/*
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException e) {
@@ -34,7 +34,7 @@ public class Connexion extends JFrame implements ActionListener
 			System.out.println("*** Erreur : IllegalAccess");
 		} catch (UnsupportedLookAndFeelException e) {
 			System.out.println("*** Erreur : UnsupportedLookAndFeel");
-		}
+		}*/
 		new Connexion();
 	}
 	
