@@ -15,11 +15,13 @@
 	Popularité : <bean:write name="PERSONNE" property="popularite" /><br/>
 	Né le : <bean:write name="PERSONNE" property="naissance" /><br/>
 	Lien vers la photo : <bean:write name="PERSONNE" property="photo" /><br/>
+	Dernière mise à jour : <bean:write name="PERSONNE" property="date_maj" /><br/>
 	<br/>
 	<h3><u>Récompenses</u></h3>
 	<logic:iterate id="recompense" name="PERSONNE" property="recompenses">
 		<bean:write name="recompense" property="prix" /><br/>
 	</logic:iterate>
+	<html:link action="/ajouterRecompense" paramId="id" paramName="PERSONNE" paramProperty="id" >Ajouter une récompense</html:link>
 	<br/>
 	<h3><u>Filmographie</u></h3>
 	<logic:iterate id="film" name="PERSONNE" property="filmographie">

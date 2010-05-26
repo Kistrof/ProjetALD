@@ -6,8 +6,11 @@
   		<generator class="native" />
 	</id>
 	<property name="annee" type="integer" column="annee"/>
-	<property name="soumission" type="timestamp" column="date_maj"/>
+	<property name="soumission" type="timestamp" column="soumission"/>
 	<many-to-one name="prix" column="prixid" />
-	<many-to-one name="original" column="filmid" />
-	 </class>
+	<many-to-one name="original" column="recompenseid" />
+	<many-to-one name="auteur"	column="prologin" />
+	<many-to-one name="personne"	column="personneid" />
+	<many-to-one name="film"	column="filmid" />
+  </class>
 </hibernate-mapping>

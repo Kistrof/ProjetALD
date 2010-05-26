@@ -127,7 +127,15 @@
 		<property name="daoFilm" ref="daoFilm"/>
 	</bean>
 	
+	<bean name="/ajouterRecompense" class="struts.action.ActionLoadPrixAndCeremonieForPersonne">
+		<property name="daoPrix" ref="daoPrix" />
+		<property name="daoPersonne" ref="daoPersonne" />
+	</bean>
 	
-	
-	
+	<bean name="/actionAjouterRecompenseToPersonne" class="struts.action.ActionAjouterRecompenseToPersonne">
+		<property name="daoFilm" ref="daoFilm" />
+		<property name="daoPersonne" ref="daoPersonne" />
+		<property name="daoPrix" ref="daoPrix" />
+		<property name="daoRecompenseTemp" ref="daoRecompenseTemp" />
+	</bean>
 </beans>
