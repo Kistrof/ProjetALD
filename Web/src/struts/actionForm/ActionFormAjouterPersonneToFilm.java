@@ -15,7 +15,6 @@ public class ActionFormAjouterPersonneToFilm extends ActionForm
 	private int codeActeur = -1;
 	private int codeProducteur = -1;
 	private int codeRealisateur = -1;
-	private boolean FromFilm;
 	
 	public int getId() {
 		return id;
@@ -47,14 +46,6 @@ public class ActionFormAjouterPersonneToFilm extends ActionForm
 
 	public void setCodeRealisateur(int codeRealisateur) {
 		this.codeRealisateur = codeRealisateur;
-	}
-
-	public boolean getFromFilm() {
-		return FromFilm;
-	}
-
-	public void setFromFilm(boolean fromFilm) {
-		FromFilm = fromFilm;
 	}
 
 	@Override

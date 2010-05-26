@@ -14,7 +14,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import struts.actionForm.ActionFormVerifLogin;
-import tool.BoiteAOutilWeb;
+//import tool.BoiteAOutilWeb;
 
 import dao.DAOPro;
 

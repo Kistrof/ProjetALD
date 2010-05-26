@@ -6,14 +6,14 @@
 
 	<form-beans>
 		
-		<form-bean name="formActionFilm"       type="struts.actionForm.ActionFormFilm" />
-		<form-bean name="formActionNoterFilm"  type="struts.actionForm.ActionFormNoterFilm" />
-		<form-bean name="formVerifLogin"       type="struts.actionForm.ActionFormVerifLogin"/>
-		<form-bean name="formAjoutPro"         type="struts.actionForm.ActionFormAjoutPro"/>
-		<form-bean name="formRecherche" 	   type="struts.actionForm.ActionFormRecherche"/>
-		<form-bean name="formActionNoterFilm"  type="struts.actionForm.ActionFormNoterFilm" />
-		<form-bean name="formActionPersonne"   type="struts.actionForm.ActionFormPersonne" />
-		<form-bean name="formActionAjouterPersonneToFilm" type="struts.actionForm.ActionFormAjouterPersonneToFilm" />
+		<form-bean name="formActionFilm"       							type="struts.actionForm.ActionFormFilm" />
+		<form-bean name="formActionNoterFilm"  							type="struts.actionForm.ActionFormNoterFilm" />
+		<form-bean name="formVerifLogin"       							type="struts.actionForm.ActionFormVerifLogin"/>
+		<form-bean name="formAjoutPro"         							type="struts.actionForm.ActionFormAjoutPro"/>
+		<form-bean name="formRecherche" 	   							type="struts.actionForm.ActionFormRecherche"/>
+		<form-bean name="formActionPersonne"   							type="struts.actionForm.ActionFormPersonne" />
+		<form-bean name="formActionAjouterPersonneToFilm" 				type="struts.actionForm.ActionFormAjouterPersonneToFilm" />
+		<form-bean name="formActionAjouterRecompenseToPersonne"			type="struts.actionForm.ActionFormAjouterRecompenseToPersonne" />
 		
 		
 		
@@ -131,15 +131,23 @@
 		<action path="/AjouterPersonne" forward="/vues/AjoutOrModifPersonne.jsp" />
 		
 		<action path="/supprActeur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
-			<forward name="next" path="/afficheFilm.do" />
+			<forward name="next" path="/AfficheFilm.do" />
 		</action>
 		
 		<action path="/supprProducteur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
-			<forward name="next" path="/afficheFilm.do" />
+			<forward name="next" path="/AfficheFilm.do" />
 		</action>
 		
 		<action path="/supprRealisateur" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
-			<forward name="next" path="/afficheFilm.do" />
+			<forward name="next" path="/AfficheFilm.do" />
+		</action>
+		
+		<action path="/ajouterRecompense" type="org.springframework.web.struts.DelegatingActionProxy" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/vues/FormAjouterRecompense.jsp" />
+		</action>
+		
+		<action path="/actionAjouterRecompenseToPersonne" type="org.springframework.web.struts.DelegatingActionProxy" name="formActionAjouterRecompenseToPersonne" scope="request" validate="true" input="/vues/Erreurs.jsp">
+			<forward name="next" path="/AffichePersonne.do" />
 		</action>
 		
 		

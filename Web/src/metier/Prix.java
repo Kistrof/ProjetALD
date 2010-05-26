@@ -36,6 +36,10 @@ public class Prix
 		this.titre = titre;
 	}
 	
+	public String getTitreComplet() {
+		return titre + " " +ceremonie.getTitre();
+	}
+	
 	public Ceremonie getCeremonie() {
 		return ceremonie;
 	}

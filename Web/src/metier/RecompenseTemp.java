@@ -7,6 +7,8 @@ public class RecompenseTemp extends Modification {
 	private Prix prix;
 	private int annee;
 	private Recompense original;
+	private Personne personne;
+	private Film film;
 
 	public RecompenseTemp()
 	{
@@ -14,14 +16,18 @@ public class RecompenseTemp extends Modification {
 		this.prix = null;
 		this.annee = -1;
 		this.original = null;
+		this.personne = null;
+		this.film = null;
 	}
 
-	public RecompenseTemp(int id, Pro auteur, Date dt, Prix prix, int annee, Recompense original)
+	public RecompenseTemp(int id, Pro auteur, Date dt, Prix prix, int annee, Recompense original, Personne personne, Film film)
 	{
 		super(id, auteur, dt);
 		this.prix = prix;
 		this.annee = annee;
 		this.original = original;
+		this.personne = personne;
+		this.film = film;
 	}
 
 	public int getId() {
@@ -54,6 +60,22 @@ public class RecompenseTemp extends Modification {
 
 	public void setOriginal(Recompense original) {
 		this.original = original;
+	}
+
+	public Personne getPersonne() {
+		return personne;
+	}
+
+	public void setPersonne(Personne personne) {
+		this.personne = personne;
+	}
+
+	public Film getFilm() {
+		return film;
+	}
+
+	public void setFilm(Film film) {
+		this.film = film;
 	}
 
 	@Override
