@@ -1,21 +1,22 @@
 package metier;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class Pro
 {
 	private String pseudo;
 	private String pass;
-	private Timestamp date_inscription;
-	private Timestamp derniere_visite;
+	private Date date_inscription;
+	private Date derniere_visite;
 	private boolean admin;
 	
 	public Pro()
 	{
 		this.pseudo = "";
 		this.pass = "";
-		date_inscription = new Timestamp(0);
-		derniere_visite = new Timestamp(0);
+		date_inscription = new Date();
+		derniere_visite = new Date();
 	}
 
 	public Pro(String pseudo, String pass, Timestamp dateInscription, Timestamp derniereVisite)
@@ -42,19 +43,19 @@ public class Pro
 		this.pass = pass;
 	}
 
-	public Timestamp getDate_inscription() {
+	public Date getDate_inscription() {
 		return date_inscription;
 	}
 
-	public void setDate_inscription(Timestamp dateInscription) {
+	public void setDate_inscription(Date dateInscription) {
 		date_inscription = dateInscription;
 	}
 
-	public Timestamp getDerniere_visite() {
+	public Date getDerniere_visite() {
 		return derniere_visite;
 	}
 
-	public void setDerniere_visite(Timestamp derniereVisite) {
+	public void setDerniere_visite(Date derniereVisite) {
 		derniere_visite = derniereVisite;
 	}
 	
